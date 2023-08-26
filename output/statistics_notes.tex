@@ -7,8 +7,6 @@
 \usepackage{lipsum}
 \usepackage{thmtools}
 
-\theoremstyle{remark}
-
 \newtheorem{defn}{Definition}
 \newtheorem{note}{Note}
 \newtheorem{notation}[subsection]{Notation}
@@ -18,10 +16,10 @@
 \newtheorem{lemma}[subsection]{Lemma}
 \newtheorem{result}[subsection]{Result}
 \declaretheoremstyle[bodyfont=\normalfont]{normalbody}
-\declaretheorem[style=normalbody,name=Exercise]{ex}
+\declaretheorem[style=normalbody,name=]{ex}
 \newtheorem{remark}[subsection]{Remark}
 \newtheorem{prop}[subsection]{Proposition}
-\newenvironment*{sol}{\textbf{Solution.}\space\em\\}{\par}
+\newenvironment*{ans}{\textbf{ans.}\space\em\\}{\par}
 \newenvironment*{source}{\hfill\scriptsize\textbf{Source.}\space}{\par}
 
 \declaretheoremstyle[headfont=\normalfont]{normalhead}
@@ -33,6 +31,7 @@
 \widowpenalties 1 10000
 \raggedbottom
 \setlength{\parindent}{0pt}
+\renewcommand{\chaptername}{}
 
 \begin{document}
 
@@ -58,8 +57,39 @@ Then the collection $X_1, X_2, ..., X_n$ is called a \textbf{random sample} of s
 
 Since $X_1, X_2, ..., X_n$ are iid, the joint distribution of the random sample is $f(x_1, x_2, ..., x_n) = f(x_1) f(x_2) ... f(x_n)$.
 
+Any quantity obtained from a sample for the purpose of estimating a population parameter is called a sample
+statistic, or briefly statistic. Mathematically, a sample statistic for a sample of size n can be defined as a function of the random variables $X_1, X_2, ..., X_n$ as $T(X_1, X_2, ..., X_n)$. This itself is a random variable whose values can be represented as $T(x_1, x_2, ..., x_n)$.
 
+\begin{defn}[Statistic]
+    Let $X_1, X_2, ..., X_n$ be a random sample of size $n$ from the population whose distribution is $f\left (x|\theta\right )$ (the distribution $f$ with unknown parameter $\theta$). Let $T\left (x_1, x_2, ...,x_n\right )$ be a real-valued or vector-valued function whose domain includes the range of $\left (X_1, X_2, ..., X_n\right )$. Then the random variable or random vector $Y = T\left (X_1, ..., X_n\right )$ is called a \textbf{statistic} provided that $T$ is not a function of any unknown parameter $\theta$.
+\end{defn}
 
+For example consider $X \approx N(\mu, \sigma^2)$ where $\mu$ is known but $\sigma$ is unknown. Then $\frac{\sum_{i=1}^n X_i}{\sigma^2}$ is not a statistic but $\frac{\sum_{i=1}^n X_i}{\mu^2}$ is a statistic.
+
+Two common statistics are the sample mean and sample variance.
+
+\begin{defn}[Sample Mean, Sample Variance, Sample Standard Deviation]
+    The \textbf{sample mean} is the arithmetic average of the values in the random sample. It is denoted by $\bar{X} = \displaystyle \frac{X_1 + X_2 + ... + X_n}{n}$.
+
+    The \textbf{sample variance} is the statistic defined by $S^2 = \displaystyle \frac{\sum_{i=1}^n \left (X_i - \bar{X}\right )^2}{n-1}$
+
+    The \textbf{sample standard deviation} is the statistic defined by $S = \sqrt{S^2}$.
+\end{defn}
+
+\begin{defn}[Unbiased Estimator]
+    Let $X_1, X_2, ..., X_n$ be a random sample from a population $f\left (x| \theta\right )$. We say that a statistic $T\left (X_1, X_2, ...,X_n\right )$ is an \textbf{unbiased estimator} of the parameter $\theta$ if $E_T = \theta$ for all possible values of $\theta$.
+\end{defn}
+
+\begin{thm}
+    Let $X_1, X_2, ..., X_n$ be a random sample from a population with mean $\mu $ and variance $\sigma ^2 < \infty$. Then:
+    \begin{enumerate}
+        \item $E\left (\bar{X}\right ) = \mu $
+        \item $\text{Var}\left (\bar{X}\right ) = \frac{\sigma ^2}{n}$
+        \item $E\left (S ^2\right ) = \sigma ^2$
+    \end{enumerate}
+\end{thm}
+
+From the above theorem we see that the sample mean $\bar{X}$ is an unbiased estimator of the population mean $\mu$ and the sample variance $\S^2$ is an unbiased estimator of the population variance $\sigma^2$. (The reason we included $1/n-1$ in the  definition of the sample variance was to make it an unbiased estimator)
 
 \newpage
 \chapter{Exercises}
@@ -69,13 +99,74 @@ Since $X_1, X_2, ..., X_n$ are iid, the joint distribution of the random sample 
 \begin{ex}
 Let $X_1, X_2, ..., X_n$ be a random sample of $n$ identical circuit boards whose times until failure are thought to follow an exponential($\beta$) population. Find the joint distribution of the sample. What is the probability that all the boards last more than 2 years?
 \end{ex}
-\begin{sol}
+\begin{ans}
 $f(x_1, x_2, ..., x_n)  = f(x_1) f(x_2) ... f(x_n) = \Pi_{i=1}^n \frac{1}{\beta} \exp(\frac{-x_i}{\beta})$ \\
 $P(X_1 > 2, X_2 > 2, ..., X_n > 2) = \exp(\frac{-2n}{\beta})$
-\end{sol}
+\end{ans}
 \begin{source}
     Class, Lec 02
 \end{source}
+
+\begin{ex}
+If sample $X_1, X_2, ..., X_n$ are drawn from  a finite population without replacement, then show that the random variables $X_1, X_2, ...,X_n$ are not mutually independent but that they are identically distributed.
+\end{ex}
+\begin{source}
+Class, Lec 02 
+\end{source}
+
+\begin{samepage}
+\begin{ex}
+Let $X \approx \text{Bernoulli}\left (p\right )$ where $p$ is possibly unknown. Suppose that five independent observations on $X$ are $0,1,1,1,0$ Then find the sample mean, sample variance and sample standard deviation.
+\end{ex}
+\begin{ans}
+Mean $\bar{x} = 0.6$\\
+Variance $s^2 = 0.3$ \\
+Standard Deviation $s = 0.55$ 
+\end{ans}
+\begin{source}
+Class, Lec 03
+\end{source}
+\end{samepage}
+
+\begin{samepage}
+\begin{ex}
+    Let $X_1, X_2, ..., X_n$ be a random sample from a population with mean $\mu $ and variance $\sigma ^2 < \infty$. Then show that:
+    \begin{enumerate}
+        \item $E\left (\bar{X}\right ) = \mu $
+        \item $\text{Var}\left (\bar{X}\right ) = \frac{\sigma ^2}{n}$
+        \item $E\left (S ^2\right ) = \sigma ^2$
+    \end{enumerate}
+\end{ex}
+\begin{source}
+Class, Lec 03
+\end{source}
+\end{samepage}
+
+\begin{samepage}
+\begin{ex}
+Color blindness appears in 1\%  of the people in a certain population. How large must a sample be if the probability of its containing a color-blind person is to be 0.95 or more? (Assume that the population is large enough to be considered infinite, so that sampling can be considered to be with replacement.)
+\end{ex}
+\begin{ans}
+Sample size greater than 299
+\end{ans}
+\begin{source}
+Class, Lec 03
+\end{source}
+\end{samepage}
+
+\begin{samepage}
+\begin{ex}
+Suppose that five observations on normal population are \\
+$-0.864, 0.561, 2.355, 0.582, -0.774$.
+Compute sample variance.
+\end{ex}
+\begin{ans}
+1.648
+\end{ans}
+\begin{source}
+Class, Lec 03
+\end{source}
+\end{samepage}
 
 \newpage
 \addcontentsline{toc}{chapter}{Bibliography}

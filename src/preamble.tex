@@ -7,8 +7,6 @@
 \usepackage{lipsum}
 \usepackage{thmtools}
 
-\theoremstyle{remark}
-
 \newtheorem{defn}{Definition}
 \newtheorem{note}{Note}
 \newtheorem{notation}[subsection]{Notation}
@@ -18,10 +16,10 @@
 \newtheorem{lemma}[subsection]{Lemma}
 \newtheorem{result}[subsection]{Result}
 \declaretheoremstyle[bodyfont=\normalfont]{normalbody}
-\declaretheorem[style=normalbody,name=Exercise]{ex}
+\declaretheorem[style=normalbody,name=]{ex}
 \newtheorem{remark}[subsection]{Remark}
 \newtheorem{prop}[subsection]{Proposition}
-\newenvironment*{sol}{\textbf{Solution.}\space\em\\}{\par}
+\newenvironment*{ans}{\textbf{ans.}\space\em\\}{\par}
 \newenvironment*{source}{\hfill\scriptsize\textbf{Source.}\space}{\par}
 
 \declaretheoremstyle[headfont=\normalfont]{normalhead}
@@ -33,6 +31,7 @@
 \widowpenalties 1 10000
 \raggedbottom
 \setlength{\parindent}{0pt}
+\renewcommand{\chaptername}{}
 
 \begin{document}
 
