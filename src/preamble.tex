@@ -5,8 +5,11 @@
 \usepackage{caption}
 \usepackage{fancyhdr}
 \usepackage{lipsum}
+\usepackage{thmtools}
 
-\newtheorem{defn}[subsection]{Definition}
+\theoremstyle{remark}
+
+\newtheorem{defn}{Definition}
 \newtheorem{note}{Note}
 \newtheorem{notation}[subsection]{Notation}
 \newtheorem{thm}[subsection]{Theorem}
@@ -14,11 +17,14 @@
 \newtheorem{eg}[subsection]{Example}
 \newtheorem{lemma}[subsection]{Lemma}
 \newtheorem{result}[subsection]{Result}
-\newtheorem{problem}[subsection]{Problem}
-\newtheorem{sol}{Solution}
-\newtheorem*{sol*}{Solution}
+\declaretheoremstyle[bodyfont=\normalfont]{normalbody}
+\declaretheorem[style=normalbody,name=Exercise]{ex}
 \newtheorem{remark}[subsection]{Remark}
 \newtheorem{prop}[subsection]{Proposition}
+\newenvironment*{sol}{\textbf{Solution.}\space\em\\}{\par}
+\newenvironment*{source}{\hfill\scriptsize\textbf{Source.}\space}{\par}
+
+\declaretheoremstyle[headfont=\normalfont]{normalhead}
 
 \makeatletter
 \newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}

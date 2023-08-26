@@ -1,0 +1,20 @@
+\chapter{Definitions and Theory}
+\line(1,0){360} \\
+
+We can either sample \textit{with replacement} or \textit{without replacement}. A finite population sampled with replacement can be considered infinite. Sampling from a very large finite population can similarly be considered as sampling from an infinite population. 
+
+To properly choose the sample, we can make sure that every member of the population has an equal chance of being in the sample.
+Normally, since the sample size is much smaller than the population size, sampling without replacement will give practically the same results as sampling with replacement.
+
+For a sample of size $n$ from a population which we assume has distribution $f(x)$, we can choose members of the population at random, each selection corresponding to a random variable $X_1, X_2, ..., X_n$ with corresponding values $x_1, x_2, ..., x_n$. In case we are assuming sampling without replacement, $X_1, X_2, ..., X_n$ will be independent and identically distributed random variables with probability distribution $f(x)$.
+
+\begin{defn}[Random Sample]
+Let $X$ be a random variable with a distribution $f$, and let $X_1, X_2, ..., X_n$ be iid random variables with the common distribution $f$.
+
+Then the collection $X_1, X_2, ..., X_n$ is called a \textbf{random sample} of size $n$ from the population $f$.
+\end{defn}
+
+Since $X_1, X_2, ..., X_n$ are iid, the joint distribution of the random sample is $f(x_1, x_2, ..., x_n) = f(x_1) f(x_2) ... f(x_n)$.
+
+
+

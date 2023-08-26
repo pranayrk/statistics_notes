@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.4.27)  26 AUG 2023 10:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.4.27)  26 AUG 2023 12:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -198,8 +198,46 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \l__lipsum_b_int=\count277
 
 (/usr/share/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
-\c@note=\count278
-\c@sol=\count279
+(/usr/share/texmf-dist/tex/latex/thmtools/thmtools.sty
+Package: thmtools 2023/02/17 v0.75
+\thmt@toks=\toks30
+\c@thmt@dummyctr=\count278
+
+(/usr/share/texmf-dist/tex/latex/thmtools/thm-patch.sty
+Package: thm-patch 2023/02/17 v0.75
+
+(/usr/share/texmf-dist/tex/latex/thmtools/parseargs.sty
+Package: parseargs 2023/02/17 v0.75
+\@parsespec=\toks31
+))
+(/usr/share/texmf-dist/tex/latex/thmtools/thm-kv.sty
+Package: thm-kv 2023/02/17 v0.75
+Package thm-kv Info: Theorem names will be uppercased on input line 42.
+
+(/usr/share/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+Package thm-kv Info: kvsetkeys patch (v1.16 or later) on input line 158.
+)
+(/usr/share/texmf-dist/tex/latex/thmtools/thm-autoref.sty
+Package: thm-autoref 2023/02/17 v0.75
+
+(/usr/share/texmf-dist/tex/latex/thmtools/aliasctr.sty
+Package: aliasctr 2023/02/17 v0.75
+))
+(/usr/share/texmf-dist/tex/latex/thmtools/thm-listof.sty
+Package: thm-listof 2023/02/17 v0.75
+)
+(/usr/share/texmf-dist/tex/latex/thmtools/thm-restate.sty
+Package: thm-restate 2023/02/17 v0.75
+)
+(/usr/share/texmf-dist/tex/latex/thmtools/thm-amsthm.sty
+Package: thm-amsthm 2023/02/17 v0.75
+\thmt@style@headstyle=\toks32
+))
+\c@defn=\count279
+\c@note=\count280
+\c@ex=\count281
 
 (./statistics_notes.aux
 
@@ -220,33 +258,33 @@ LaTeX Warning: Label `latexcompanion' multiply defined.
 )
 \openout1 = `statistics_notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count280
+\scratchcounter=\count282
 \scratchdimen=\dimen162
 \scratchbox=\box54
-\nofMPsegments=\count281
-\nofMParguments=\count282
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count283
+\nofMPsegments=\count283
+\nofMParguments=\count284
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count285
 \MPscratchDim=\dimen163
-\MPnumerator=\count284
-\makeMPintoPDFobject=\count285
-\everyMPtoPDFconversion=\toks31
+\MPnumerator=\count286
+\makeMPintoPDFobject=\count287
+\everyMPtoPDFconversion=\toks34
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -266,7 +304,35 @@ Package caption Info: End \AtBeginDocument code.
  [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [1
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Chapter 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--45
+
+ []
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
+
+
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+]
+Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
+
+ []
+
+[2
+
+] [3
 
 ] (./statistics_notes.aux)
 
@@ -274,19 +340,25 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4703 strings out of 476024
- 79179 string characters out of 5796533
- 1853388 words of memory out of 5000000
- 25138 multiletter control sequences out of 15000+600000
- 513498 words of font info for 36 fonts, out of 8000000 for 9000
+ 5508 strings out of 476024
+ 95609 string characters out of 5796533
+ 1855388 words of memory out of 5000000
+ 25890 multiletter control sequences out of 15000+600000
+ 518501 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,5n,77p,250b,165s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 72i,5n,77p,525b,171s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on statistics_notes.pdf (2 pages, 28887 bytes).
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmti12.pfb>
+Output written on statistics_notes.pdf (4 pages, 104258 bytes).
 PDF statistics:
- 21 PDF objects out of 1000 (max. 8388607)
- 12 compressed objects within 1 object stream
+ 62 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
