@@ -12,7 +12,7 @@
 \newtheorem{defn}{Definition}
 \newtheorem{note}{Note}
 \newtheorem{notation}[subsection]{Notation}
-\newtheorem{thm}[subsection]{Theorem}
+\newtheorem{thm}{Theorem}
 \newtheorem{corollary}[subsection]{Corollary}
 \newtheorem{eg}[subsection]{Example}
 \newtheorem{lemma}[subsection]{Lemma}
@@ -46,6 +46,24 @@
 
 \chapter{Definitions and Theory}
 \line(1,0){360} \\
+
+\section{Foundations}
+
+\begin{defn}
+    Two random vectors $(X_1, X_2, ..., X_n)$ and $(Y_1, Y_2, ..., Y_n)$ are said to be independent if $F(x_1, x_2, ..., x_m, y_1, y_2, ..., y_n) = F_1 (x_1, x_2, ..., x_m) F_2 (x_1, x_2, ..., x_n)$ for all $(x_1, x_2, ..., x_m, y_1, y_2, ..., y_n) \in \mathbb{R}^{m+n}$ where $F, F_1, F_2$ are the joint CDF's of $(X_1, X_2, ..., X_m, Y_1, Y_2, ..., Y_n)$, $(X_1, X_2, ..., X_m)$ and $(Y_1, Y_2, ..., Y_n)$ respectively.
+\end{defn}
+
+\begin{thm}
+    Let $X = (X_1, X_2, · · · , X_m)$ and $Y = (Y_1, Y_2, · · · , Y_n)$ be independent random vectors. Then the component $X_j$ of $X(j = 1, 2, · · · , m)$ and the component $Y_k$ of $Y(k = 1, 2, · · · , n)$ are independent random variables. If $h$ and $g$ are Borel-measurable functions, $h(X_1, X_2, · · · , X_m)$ and $g(Y_1, Y_2, · · · , Y_n)$ are independent.
+\end{thm}
+
+\begin{thm}
+    Let $X$ be a random variable with pdf $f(x)$. Then the pdf of $aX+b$ where $a \neq 0, b \in \mathbb{R}$ is given by $\displaystyle \frac{1}{a} f \left (\frac{x-b}{a} \right)$
+\end{thm}
+
+\begin{thm}
+    If $X$ and $Y$ are independent continuous random variables with pdfs $f_X(x)$ and $f_Y(y)$, then the pdf of $Z = X+Y$ is $f_Z\left (z\right ) = \displaystyle\int_{- \infty}^\infty f_X \left (w\right ) f_Y \left (z - w\right ) \mathop{\mathrm{d} w}$
+\end{thm}
 
 \begin{defn}
     The \textbf{expectation} of a random variable $X$ having values $x_1, x_2, ..., x_n$ is defined as $E\left (X\right ) = x_1  P\left (X = x_1\right ) + x_2 P\left (x = x_2\right ) + ... + x_n P\left (X = x_n\right ) =  \sum_{j = 1}^n x_j P\left (X = x_j\right ) = x_1 f\left (x_1\right ) + x_2 f\left (x_2\right ) + ... + x_n f\left (x_n\right ) = \sum_{j=1} \to n x_j f\left (x_j\right )$ where $f$ is the distribution of $X$.
@@ -90,14 +108,19 @@
 
 It follows that $\mu_0 = 0$, $\mu_1 = 1$, $\mu_2 = \sigma ^2$
 
-\begin{samepage}
 \begin{defn}[Moment Generating Function]
     Let $X$ be a random variable defined on $\left (\Omega,  \mathcal{F}, P\right )$. The function $M\left (t\right ) = E\left [e ^{t X}\right ]$ is called the \textbf{moment generating function} (MGF) of the random variable $X$ if the expectation on the right side exists in some neighbouhood of the origin. If the expectation on the right side does not exist in any neighbourhood of the origin, then we say the MGF does not exist.
 \end{defn}
 
+\begin{samepage}
 The $r$-th derivative of the moment generating funtion is the $r$-th moment about the origin $\mu_r '$.
-\end{samepage}
+\begin{thm}
+    If the MGF $M(s)$ of a random variable $X$ exists, then the MGF $M(s)$ has derivatives of all orders at $s=0$ and \\
 
+    $M^{(k)} (s) |_{s=0} = EX^k$ for positive integer $k$
+\end{thm}
+
+\end{samepage}
 \begin{thm}
     The moment generating function has the following properties:
     \begin{enumerate}
@@ -107,6 +130,66 @@ The $r$-th derivative of the moment generating funtion is the $r$-th moment abou
     \end{enumerate}
 \end{thm}
 
+\begin{defn}
+    Let $X_1, X_2, ..., X_n$ be a jointly distributed or $(X_1, X_2, ..., X_n)$ be a random vector. If $E[\exp ( \sum_{j=1}^n t_j X_j )]$ exists for $|t_j| \leq h_j$, $j = 1, 2, ...,n$, we write $M(t_1, t_2, ..., t_n) = E[\exp(t_1 X_1 + t_2 X_2 + ... + t_n X_n)]$ and call it the MGF of $X_1, X_2, ..., X_n$ or simply, the MGF of the random vector $(X_1, X_2, ..., X_n)$
+\end{defn}
+
+\begin{thm}
+    The joint MGF $M(t_1, t_2)$ uniquely determines the joint distribution of $(X, Y)$.
+    Conversely, if the joint MGF exists it is unique.
+\end{thm}
+
+\begin{thm}
+    The joint MGF $M(t_1, t_2)$ completely determines the marginal distributions of $X$ and $Y$. 
+
+    $M(t_1, 0) = E[\exp(t_1 X)] = M_X (t_1)$ and $M(0, t_2) = E[\exp(t_2 X)] = M_Y(t_2)$
+\end{thm}
+
+\begin{thm}
+    $X$ and $Y$ are independent random variables if and only if $M(t_1, t_2) = M(t_1, 0) M(0, t_2)$ for all $t_1 \in [-h_1, h_1], t_2 \in [-h_2, h_2]$
+\end{thm}
+
+\section{Distributions}
+
+\begin{defn}[Cauchy Distribution]
+    A variable the pdf $f(x) = \displaystyle \frac{1}{\sigma \pi (1 + \left( \frac{x - \mu}{\sigma} \right)^2 )}$, $x \in \mathbb{R}$ where $\sigma > 0, \mu \in \mathbb{R}$ is called a \textbf{Cauchy random variable} with parameter $\mu$ and $\sigma^2$. 
+    We write $X \sim \mathcal{C}(\mu, \sigma^2)$ for Cauchy random $X$ with pdf.
+\end{defn}
+
+\begin{defn}[Gamma Function]
+    $\Gamma(\alpha)$ denotes the gamma function which is defined as $\Gamma(\alpha) = \displaystyle\int_0^\infty t ^{\alpha - 1} e ^{-t} \mathop{\mathrm{d} t}$, where $\alpha > 0$.
+\end{defn}
+
+\begin{thm}[Properties of the Gamma function]
+    \begin{enumerate}
+        \item[]
+        \item The improper integral converges for all $\alpha > 0$. 
+        \item $\Gamma(\alpha) > 0$  for all $\alpha > 0$, $\Gamma(\alpha) \to \infty$ as $\alpha \to 0$. 
+        \item $\Gamma(1) = 1$
+        \item $\Gamma(\alpha + 1) = \alpha \Gamma(\alpha)$
+        \item For $n \in \mathbb{N}$, $\Gamma(n) = (n-1)!$
+        \item $\Gamma(\frac{1}{2}) = \sqrt{\pi}$
+    \end{enumerate}
+\end{thm}
+
+\begin{defn}[Gamma Distribution]
+    A random variable with the pdf $f(x) = \displaystyle  \frac{1}{\Gamma(\alpha) \beta^\alpha} x^{\alpha - 1} e^{-x/\beta}$ where $0 < x < \infty, \alpha > 0, \beta > 0$ is called a \textbf{gamma random variable} $G(\alpha, \beta)$ with parameters $\alpha$ and $\beta$. 
+\end{defn}
+$G(1, \beta) = \text{exp}(\beta)$ with pdf $f(x) = \frac{1}{\beta} e^{-x/\beta}$, $x > 0$.
+
+\begin{defn}[Chi-Square Distribution]
+    The \textbf{chi-square distribution} is \\
+    $f(x) = \displaystyle \frac{1}{\Gamma(\frac{p}{2}) 2^{\frac{p}{2}}} x^{\frac{p}{2} - 1} e ^{-x/2}$ where $0 < x < \infty$.
+
+    \vspace{0.5cm}
+    $\chi_p^2$ denotes a chi-square random variable with $p$ degrees of freedom.
+\end{defn}
+
+The chi-square distribution is a special case of the gamma distribution with $\alpha = \frac{p}{2}$ and $\beta = 2$.
+
+Let $X \sim N(0,1)$. Then $X^2 \sim \chi_1^2$
+
+\section{Sampling Theory}
 We can either sample \textit{with replacement} or \textit{without replacement}. A finite population sampled with replacement can be considered infinite. Sampling from a very large finite population can similarly be considered as sampling from an infinite population. 
 
 To properly choose the sample, we can make sure that every member of the population has an equal chance of being in the sample.
@@ -156,7 +239,25 @@ Two common statistics are the sample mean and sample variance.
 
 From the above theorem we see that the sample mean $\bar{X}$ is an unbiased estimator of the population mean $\mu$ and the sample variance $\S^2$ is an unbiased estimator of the population variance $\sigma^2$. (The reason we included $1/n-1$ in the  definition of the sample variance was to make it an unbiased estimator)
 
+\begin{defn}
+    Let $X_1, X_2, ..., X_n$ be a random sample of size $n$ from a population $f(x|\theta)$. The probability distribution of a statistic $T(X_1, X_2, ..., X_n)$ is called the sampling distribution of $T$.
+\end{defn}
 
+\begin{thm}[Distribution of the sample mean]
+    Let $X_1, X_2, ..., X_n$ be a random sample from a population with MGF $M_X(t)$. Then the MGF of the sample mean is $M_{\bar{X}} (t) = (M_X (t/n))^n$.
+\end{thm}
+
+\begin{thm}
+    Let $X_1, X_2, . . . , X_n$ be a random sample from a $N(\mu, \sigma^2)$ distribution, and let $X$ denote the sample mean.
+
+    Then $X$ and the random vector $(X_1 - X, X_2 - X, . . . , X_n - X)$ are independent.
+\end{thm}
+
+\begin{thm}
+    Let $X_1, X_2, . . . , X_n$ be a random sample from a $N(\mu, \sigma^2)$ distribution, 
+    and let $X$ denote the sample mean and $S^2$ denote the sample variance. Then $X$ and $S^2$ are independent random variables.
+\end{thm}
+The converse of this theorem is also true: if the sample mean and sample variance of a random sample are independent random variables then population distribution is normal.
 
 \newpage
 \chapter{Exercises}
@@ -196,6 +297,55 @@ Let $X \approx \exp(\lambda)$ with pdf $f(x) = \lambda e^{- \lambda x}$, $x \geq
 \end{ex}
 \begin{source}
 Class, Lec 04
+\end{source}
+\end{samepage}
+
+\begin{samepage}
+\begin{ex}
+Let $Z_1, Z_2, ..., Z_n$ be a random sample from $\mathcal{C}(0,1)$ distribution. Derive the distribution of sample mean $\bar{Z}$.
+\end{ex}
+\begin{ans}
+$\text{Cauchy}(0,1)$
+\end{ans}
+\begin{source}
+Class, Lec 05
+\end{source}
+\end{samepage}
+
+\begin{samepage}
+\begin{ex}
+Show that the MGF of the gamma distribution $G(\alpha, \beta)$ is $M_G = \displaystyle \frac{1}{(1 - \beta t)^\alpha}$ for $t < \displaystyle \frac{1}{\beta}$. Hence compute the mean and variance of the gamma distribution.
+\end{ex}
+\begin{source}
+Class, Lec 06
+\end{source}
+\end{samepage}
+
+\begin{samepage}
+\begin{ex}
+Let $X_1, X_2, ..., X_n$ be independent random variables such that  $X_j \sim G(\alpha_j, \beta)$, $j = 1, 2, ...,n$.
+Then show that $X_1 +  X_2 + ... + X_n \sim G(\sum_{j=1}^n \alpha_j , \beta)$.
+\end{ex}
+\begin{source}
+Class, Lec 06
+\end{source}
+\end{samepage}
+
+\begin{samepage}
+\begin{ex}
+Let $X \sim N(0,1)$. Then show that $X^2 \sim \chi_1^2$
+\end{ex}
+\begin{source}
+Class, Lec 06
+\end{source}
+\end{samepage}
+
+\begin{samepage}
+\begin{ex}
+Let $X \sim U(0,1)$. Then show that $-2 \ln X \sim \chi^2_2$
+\end{ex}
+\begin{source}
+Class, Lec 06
 \end{source}
 \end{samepage}
 
@@ -284,21 +434,93 @@ Schaum's Example 5.5
 \end{source}
 \end{samepage}
 
-\newpage
-\addcontentsline{toc}{chapter}{Bibliography}
-\begin{thebibliography}{9}
-    \bibitem{latexcompanion}
-        (Schaum’s Outlines) John Schiller, R. Alu Srinivasan, Murray Spiegel - Probability and Statistics-McGraw-Hill Education (2012)
-    \bibitem{latexcompanion}
-        \lipsum[2][1-3]
-    \bibitem{latexcompanion}
-        \lipsum[3][1-3]
-    \bibitem{latexcompanion}
-        \lipsum[4][1-3]
-    \bibitem{latexcompanion}
-        \lipsum[5][1-3]
-    \bibitem{latexcompanion}
-        \lipsum[6][1-3]
-\end{thebibliography}
+\begin{samepage}
+\begin{ex}
+    Let $X_1, X_2, ..., X_n$ be a random sample from a population with MGF $M_X(t)$. Then show that the MGF of the sample mean is $M_{\bar{X}} (t) = (M_X (t/n))^n$.
+\end{ex}
+\begin{source}
+Class, Lec 04
+\end{source}
+\end{samepage}
+\begin{samepage}
+    \begin{ex}
+        Let $X_1, X_2, ..., X_n$ be a random sample from a $N(\mu, \sigma^2)$ population. Find the distribution of the sample mean.
+    \end{ex}
+    \begin{ans}
+        $\exp({\mu t + \frac{(\sigma^2 / n)t^2}{2}})$, i.e. $\bar{X}$ has a $N(\mu, \frac{\sigma^2}{n})$ distribution.
+    \end{ans}
+    \begin{source}
+        Class, Lec 04
+    \end{source}
+\end{samepage}
+
+\begin{samepage}
+\begin{ex}
+Let $X \sim \mathcal(C)(0,1)$. Show that:
+    \begin{enumerate}
+        \item $EX$ does not exist 
+        \item the mean does not exist
+        \item the MGF does not exist
+    \end{enumerate}
+\end{ex}
+\begin{source}
+Class, Lec 04
+\end{source}
+\end{samepage}
+
+\begin{samepage}
+\begin{ex}
+Let $X_1, ..., X_n$ be iid random variables with continuous cdf $F_X$ and suppose $EX_i = \mu$. Define the random variables $Y_1, Y_2, ..., Y_n$ by $Y_i = \begin{cases} 1 & \text{if } X_i > \mu \\ 0 & \text{if } X_i \leq \mu \end{cases}$.
+Find the distribution of $\sum_{i=1}^n Y_i$
+\end{ex}
+\begin{ans}
+$\text{Binomial}(n,1-F_X (\mu))$
+\end{ans}
+\begin{source}
+Class, Lec 04
+\end{source}
+\end{samepage}
+
+\begin{samepage}
+\begin{ex}
+A fair die is rolled. Let $X$ be the face value that turns up, and $X_1, X_2$ be two independent observations on $X$. Compute the PMF of $\bar{X}$.
+\end{ex}
+\begin{source}
+Class, Lec 04
+\end{source}
+\end{samepage}
+
+\begin{samepage}
+\begin{ex}
+Let $X_1, X_2, ..., X_n$ be independent observations on Poisson population with parameter $\lambda$. Find the distribution of the sample mean.
+\end{ex}
+\begin{ans}
+$P(\bar{X} = t) = \displaystyle \frac{e^{-n \lambda} (n \lambda)^{tn}}{(tn)!}$ where $t = 0, \frac{1}{n}, \frac{2}{n}, ...$
+\end{ans}
+\begin{source}
+Class, Lec 04
+\end{source}
+\end{samepage}
+
+\begin{samepage}
+\begin{ex}
+Let $X_1, X_2, . . . , X_n$ be a random sample from a $N(\mu, \sigma^2)$ distribution, and let $X$ denote the sample mean.
+
+Then show that $X$ and the random vector $(X_1 - X, X_2 - X, . . . , X_n - X)$ are independent.
+\end{ex}
+\begin{source}
+Class, Lec 06
+\end{source}
+\end{samepage}
+
+\begin{samepage}
+\begin{ex}
+Let $X_1, X_2, . . . , X_n$ be a random sample from a $N(\mu, \sigma^2)$ distribution, and let $X$ denote the sample mean and $S^2$ denote the sample variance. Then show that $X$ and $S^2$ are independent random variables.
+\end{ex}
+\begin{source}
+Class, Lec 06
+\end{source}
+\end{samepage}
+
 \end{document}
 
