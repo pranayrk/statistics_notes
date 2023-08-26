@@ -1,0 +1,35 @@
+\documentclass[12pt,twoside]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsfonts,graphicx,amsthm}
+\usepackage{epsfig,amssymb}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+
+\newtheorem{defn}[subsection]{Definition}
+\newtheorem{note}{Note}
+\newtheorem{notation}[subsection]{Notation}
+\newtheorem{thm}[subsection]{Theorem}
+\newtheorem{corollary}[subsection]{Corollary}
+\newtheorem{eg}[subsection]{Example}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{result}[subsection]{Result}
+\newtheorem{problem}[subsection]{Problem}
+\newtheorem{sol}{Solution}
+\newtheorem*{sol*}{Solution}
+\newtheorem{remark}[subsection]{Remark}
+\newtheorem{prop}[subsection]{Proposition}
+
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+\widowpenalties 1 10000
+\raggedbottom
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
