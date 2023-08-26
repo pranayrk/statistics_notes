@@ -1,6 +1,66 @@
 \chapter{Definitions and Theory}
 \line(1,0){360} \\
 
+\begin{defn}
+    The \textbf{expectation} of a random variable $X$ having values $x_1, x_2, ..., x_n$ is defined as $E\left (X\right ) = x_1  P\left (X = x_1\right ) + x_2 P\left (x = x_2\right ) + ... + x_n P\left (X = x_n\right ) =  \sum_{j = 1}^n x_j P\left (X = x_j\right ) = x_1 f\left (x_1\right ) + x_2 f\left (x_2\right ) + ... + x_n f\left (x_n\right ) = \sum_{j=1} \to n x_j f\left (x_j\right )$ where $f$ is the distribution of $X$.
+\end{defn}
+
+
+\begin{samepage}
+\begin{thm}  
+    The expectation has the following properties:
+
+    \begin{enumerate}
+        \item $E(c X) = c E(X)$ where $c$ is any constant
+        \item If $X$ and $Y$ are any random variables then $E(X + Y) = E(X) + E(Y)$
+        \item If $X$ and $Y$ are independent random variables, then $E(XY) = E(X)E(Y)$
+    \end{enumerate}
+\end{thm}
+\end{samepage}
+
+\begin{defn}
+    The \textbf{variance} is defined as $\text{Var} (X) = \sigma ^2 = E[ \  (X - \mu)^2 \  ]$.
+    The \textbf{standard deviation} is defined as $\sigma = \sqrt{\text{Var} (X)}$.
+\end{defn}
+
+\begin{samepage}
+\begin{thm}
+    The variance has the following properties:
+
+    \begin{enumerate}
+        \item $\sigma ^2 = E\left [ \left (X - m_u\right ) ^2 \right ] = E\left (X ^2\right ) - \mu ^2 = E\left (X ^2\right ) - \left [E\left (X\right )\right ] ^2$ where $\mu = E\left (X\right )$
+        \item If $c$ is any constant, $\text{Var}(cX) = c^2 \text{Var}(X)$
+        \item The quantity $E[ (X - a)^2 ]$ is a minimum where $a = \mu = E(X)$
+        \item If $X$ and $Y$ are independent random variables
+    \end{enumerate}
+\end{thm}
+\end{samepage}
+
+\begin{defn}[Moments]
+    The $r$-th \textbf{moment} of a random variable $X$ about the mean $\mu$ is defined as $\mu_r = E[\  (X - \mu)^r \ ]$ where $r=0, 1, 2, ...$. 
+
+    The $r$-th moment of $X$ about the origin is defined as $\mu_r ' = E(X^r)$.
+\end{defn}
+
+It follows that $\mu_0 = 0$, $\mu_1 = 1$, $\mu_2 = \sigma ^2$
+
+\begin{samepage}
+\begin{defn}[Moment Generating Function]
+    Let $X$ be a random variable defined on $\left (\Omega,  \mathcal{F}, P\right )$. The function $M\left (t\right ) = E\left [e ^{t X}\right ]$ is called the \textbf{moment generating function} (MGF) of the random variable $X$ if the expectation on the right side exists in some neighbouhood of the origin. If the expectation on the right side does not exist in any neighbourhood of the origin, then we say the MGF does not exist.
+\end{defn}
+
+The $r$-th derivative of the moment generating funtion is the $r$-th moment about the origin $\mu_r '$.
+\end{samepage}
+
+\begin{thm}
+    The moment generating function has the following properties:
+    \begin{enumerate}
+        \item For any constants $a$ and $b$, the mgf of the random variable $a X + b$ is given by $M_{aX+b} = e^{bt} M_X(at)$
+        \item If $X$ and $Y$ are independent random variables having moment generating functions $M_X(t)$ and $M_Y(T)$ respectively, then $M_{X+Y}(t) = M_X(t) M_Y(t)$
+        \item \textbf{Uniqueness Theorem} Suppose that $X$ and $Y$ are random variables having moment generating functions $M_X(t)$ and $M_Y(t)$ respectively. Then $X$ and $Y$ have the same probability distribution if and only if $M_X(t) = M_Y(t)$ identically.
+    \end{enumerate}
+\end{thm}
+
 We can either sample \textit{with replacement} or \textit{without replacement}. A finite population sampled with replacement can be considered infinite. Sampling from a very large finite population can similarly be considered as sampling from an infinite population. 
 
 To properly choose the sample, we can make sure that every member of the population has an equal chance of being in the sample.
@@ -49,3 +109,5 @@ Two common statistics are the sample mean and sample variance.
 \end{thm}
 
 From the above theorem we see that the sample mean $\bar{X}$ is an unbiased estimator of the population mean $\mu$ and the sample variance $\S^2$ is an unbiased estimator of the population variance $\sigma^2$. (The reason we included $1/n-1$ in the  definition of the sample variance was to make it an unbiased estimator)
+
+

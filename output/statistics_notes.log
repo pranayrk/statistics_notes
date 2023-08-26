@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.4.27)  26 AUG 2023 14:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.4.27)  26 AUG 2023 18:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -235,11 +235,41 @@ Package: thm-restate 2023/02/17 v0.75
 Package: thm-amsthm 2023/02/17 v0.75
 \thmt@style@headstyle=\toks32
 ))
-\c@defn=\count279
-\c@note=\count280
-\c@ex=\count281
+(/usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip65
+\enit@outerparindent=\dimen162
+\enit@toks=\toks33
+\enit@inbox=\box54
+\enit@count@id=\count279
+\enitdp@description=\count280
+)
+(/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(./statistics_notes.aux
+(/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count281
+\Gm@cntv=\count282
+\c@Gm@tempcnt=\count283
+\Gm@bindingoffset=\dimen163
+\Gm@wd@mp=\dimen164
+\Gm@odd@mp=\dimen165
+\Gm@even@mp=\dimen166
+\Gm@layoutwidth=\dimen167
+\Gm@layoutheight=\dimen168
+\Gm@layouthoffset=\dimen169
+\Gm@layoutvoffset=\dimen170
+\Gm@dimlist=\toks34
+)
+\c@defn=\count284
+\c@note=\count285
+\c@ex=\count286
+ (./statistics_notes.aux
 
 LaTeX Warning: Label `latexcompanion' multiply defined.
 
@@ -258,33 +288,33 @@ LaTeX Warning: Label `latexcompanion' multiply defined.
 )
 \openout1 = `statistics_notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count282
-\scratchdimen=\dimen162
-\scratchbox=\box54
-\nofMPsegments=\count283
-\nofMParguments=\count284
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count285
-\MPscratchDim=\dimen163
-\MPnumerator=\count286
-\makeMPintoPDFobject=\count287
-\everyMPtoPDFconversion=\toks34
+\scratchcounter=\count287
+\scratchdimen=\dimen171
+\scratchbox=\box55
+\nofMPsegments=\count288
+\nofMParguments=\count289
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count290
+\MPscratchDim=\dimen172
+\MPnumerator=\count291
+\makeMPintoPDFobject=\count292
+\everyMPtoPDFconversion=\toks36
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -297,6 +327,40 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(108.405pt, 415.5525pt, 90.3375pt)
+* v-part:(T,H,B)=(90.3375pt, 614.295pt, 90.3375pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=415.5525pt
+* \textheight=614.295pt
+* \oddsidemargin=36.0pt
+* \evensidemargin=36.0pt
+* \topmargin=-18.9325pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=95.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
 (./statistics_notes.toc)
 \tf@toc=\write3
 \openout3 = `statistics_notes.toc'.
@@ -307,32 +371,46 @@ Package caption Info: End \AtBeginDocument code.
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
  1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--44
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+Overfull \hbox (3.58237pt too wide) in paragraph at lines 51--52
+\OT1/cmr/bx/n/12 Definition 1. \OT1/cmr/m/it/12 The \OT1/cmr/bx/it/12 ex-pec-ta
+-tion \OT1/cmr/m/it/12 of a ran-dom vari-able $\OML/cmm/m/it/12 X$ \OT1/cmr/m/i
+t/12 hav-ing val-ues $\OML/cmm/m/it/12 x[]; x[]; :::; x[]$
+ []
 
-] [2]
+[1
+
+]
+Overfull \hbox (42.34543pt too wide) in paragraph at lines 123--124
+[]\OT1/cmr/m/n/12 Since $\OML/cmm/m/it/12 X[]; X[]; :::; X[]$ \OT1/cmr/m/n/12 a
+re iid, the joint dis-tri-bu-tion of the ran-dom sam-ple is $\OML/cmm/m/it/12 f
+\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; x[]; :::; x[]\OT1/cmr/m/n/12 ) =
+ []
+
+[2] [3]
  2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--97
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
 
  []
 
-[3
+[4
 
-] [4] [5
+] [5] [6
 
 ] (./statistics_notes.aux)
 
@@ -340,13 +418,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5521 strings out of 476024
- 95846 string characters out of 5796533
+ 6422 strings out of 476024
+ 110465 string characters out of 5796533
  1861388 words of memory out of 5000000
- 25900 multiletter control sequences out of 15000+600000
+ 26786 multiletter control sequences out of 15000+600000
  519561 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,6n,77p,570b,238s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 72i,5n,77p,570b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/publ
@@ -359,10 +437,10 @@ msfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
 pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on statistics_notes.pdf (6 pages, 165764 bytes).
+Output written on statistics_notes.pdf (7 pages, 182691 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 98 PDF objects out of 1000 (max. 8388607)
+ 60 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
