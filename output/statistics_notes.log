@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.4.27)  1 SEP 2023 22:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.4.27)  9 SEP 2023 18:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -273,20 +273,20 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
  (./statistics_notes.aux)
 \openout1 = `statistics_notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -327,8 +327,8 @@ Package caption Info: End \AtBeginDocument code.
 * \paperheight=794.96999pt
 * \textwidth=415.5525pt
 * \textheight=614.295pt
-* \oddsidemargin=36.0pt
-* \evensidemargin=36.0pt
+* \oddsidemargin=6.0pt
+* \evensidemargin=6.0pt
 * \topmargin=-18.9325pt
 * \headheight=12.0pt
 * \headsep=25.0pt
@@ -366,257 +366,248 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
  1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
 
  []
 
 
-Overfull \hbox (10.26862pt too wide) in paragraph at lines 53--54
-\OT1/cmr/m/it/12 be \OT1/cmr/bx/it/12 in-de-pen-dent \OT1/cmr/m/it/12 if $\OML/
-cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; x[]; :::; x[]; y[]; y[]; ::
-:; y[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
- x[]; x[]; :::; x[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 (\OML/c
-mm/m/it/12 x[]; x[]; :::; x[]\OT1/cmr/m/n/12 )$
+Overfull \hbox (11.09186pt too wide) in paragraph at lines 59--60
+\OT1/cmr/m/n/12 be \OT1/cmr/bx/n/12 in-de-pen-dent \OT1/cmr/m/n/12 if $\OML/cmm
+/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; x[]; :::; x[]; y[]; y[]; :::; 
+y[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[
+]; x[]; :::; x[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 (\OML/cmm/
+m/it/12 x[]; x[]; :::; x[]\OT1/cmr/m/n/12 )$
  []
 
 
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
 
 
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
 
 
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
 
 
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
 
 
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
 
 
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
-
-Missing character: There is no · in font cmr12!
-Missing character: There is no · in font cmr12!
-Missing character: There is no · in font cmr12!
-
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
-
-
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
-
-
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
-
-
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
-
-
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
-
-
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
 
 Missing character: There is no · in font cmr12!
 Missing character: There is no · in font cmr12!
 Missing character: There is no · in font cmr12!
 
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
 
 
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
 
 
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
 
 
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
 
 
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
 
 
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
-
-Missing character: There is no · in font cmr12!
-Missing character: There is no · in font cmr12!
-Missing character: There is no · in font cmr12!
-
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
-
-
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
-
-
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
-
-
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
-
-
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
-
-
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
 
 Missing character: There is no · in font cmr12!
 Missing character: There is no · in font cmr12!
 Missing character: There is no · in font cmr12!
 
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
 
 
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
 
 
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
 
 
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
 
 
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
 
 
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
-
-Missing character: There is no · in font cmr12!
-Missing character: There is no · in font cmr12!
-Missing character: There is no · in font cmr12!
-
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
-
-
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
-
-
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
-
-
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
-
-
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
-
-
-LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 5
-7.
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
 
 Missing character: There is no · in font cmr12!
 Missing character: There is no · in font cmr12!
 Missing character: There is no · in font cmr12!
 
-Overfull \hbox (3.58237pt too wide) in paragraph at lines 72--73
-\OT1/cmr/bx/n/12 Definition 2. \OT1/cmr/m/it/12 The \OT1/cmr/bx/it/12 ex-pec-ta
--tion \OT1/cmr/m/it/12 of a ran-dom vari-able $\OML/cmm/m/it/12 X$ \OT1/cmr/m/i
-t/12 hav-ing val-ues $\OML/cmm/m/it/12 x[]; x[]; :::; x[]$
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
+
+Missing character: There is no · in font cmr12!
+Missing character: There is no · in font cmr12!
+Missing character: There is no · in font cmr12!
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
+
+Missing character: There is no · in font cmr12!
+Missing character: There is no · in font cmr12!
+Missing character: There is no · in font cmr12!
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 6
+3.
+
+Missing character: There is no · in font cmr12!
+Missing character: There is no · in font cmr12!
+Missing character: There is no · in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--80
+
  []
 
 [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+Underfull \hbox (badness 10000) in paragraph at lines 81--83
 
  []
 
 [2]
-Overfull \hbox (4.67706pt too wide) in paragraph at lines 152--153
-\OT1/cmr/bx/n/12 Theorem 10. $\OML/cmm/m/it/12 X$ \OT1/cmr/m/it/12 and $\OML/cm
-m/m/it/12 Y$ \OT1/cmr/m/it/12 are in-de-pen-dent ran-dom vari-ables if and only
- if $\OML/cmm/m/it/12 M\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t[]; t[]\OT1/cmr/m/n/1
-2 ) =
+Underfull \hbox (badness 10000) in paragraph at lines 130--132
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+
+ []
+
+[3]
+Overfull \hbox (5.33719pt too wide) in paragraph at lines 175--176
+\OT1/cmr/bx/n/12 Theorem 11: $\OML/cmm/m/it/12 X$ \OT1/cmr/m/n/12 and $\OML/cmm
+/m/it/12 Y$ \OT1/cmr/m/n/12 are in-de-pen-dent ran-dom vari-ables if and only i
+f $\OML/cmm/m/it/12 M\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t[]; t[]\OT1/cmr/m/n/12 
+) =
  []
 
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 158.
+(amsmath)                 on input line 181.
 
-[3] [4] [5]
-Overfull \hbox (22.2214pt too wide) in paragraph at lines 253--254
-\OT1/cmr/bx/n/12 Definition 15. \OT1/cmr/m/it/12 Let $\OML/cmm/m/it/12 X$ \OT1/
-cmr/m/it/12 be a ran-dom vari-able with a dis-tri-bu-tion $\OML/cmm/m/it/12 f$\
-OT1/cmr/m/it/12 , and let $\OML/cmm/m/it/12 X[]; X[]; :::; X[]$
- []
-
-
-Overfull \hbox (42.34543pt too wide) in paragraph at lines 258--259
+[4] [5] [6]
+Overfull \hbox (42.34543pt too wide) in paragraph at lines 312--313
 []\OT1/cmr/m/n/12 Since $\OML/cmm/m/it/12 X[]; X[]; :::; X[]$ \OT1/cmr/m/n/12 a
 re iid, the joint dis-tri-bu-tion of the ran-dom sam-ple is $\OML/cmm/m/it/12 f
 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; x[]; :::; x[]\OT1/cmr/m/n/12 ) =
  []
 
-[6] [7]
- 2.
-
-Underfull \hbox (badness 10000) in paragraph at lines 316--317
-
- []
-
-[8
-
-] [9] [10] [11] (./statistics_notes.aux) ) 
+[7] [8] [9] (./statistics_notes.aux) ) 
 Here is how much of TeX's memory you used:
- 6420 strings out of 476024
- 110357 string characters out of 5796533
- 1862388 words of memory out of 5000000
- 26783 multiletter control sequences out of 15000+600000
- 521149 words of font info for 63 fonts, out of 8000000 for 9000
+ 6413 strings out of 476024
+ 110316 string characters out of 5796533
+ 1861388 words of memory out of 5000000
+ 26780 multiletter control sequences out of 15000+600000
+ 519740 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,10n,77p,570b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
-></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/t
-exmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
-sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
-></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on statistics_notes.pdf (12 pages, 213161 bytes).
+ 72i,10n,77p,570b,271s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb>
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.
+pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symb
+ols/msbm10.pfb>
+Output written on statistics_notes.pdf (10 pages, 171260 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
+ 102 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

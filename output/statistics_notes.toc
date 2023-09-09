@@ -1,6 +1,5 @@
 \contentsline {chapter}{\numberline {1}Definitions and Theory}{1}{}%
 \contentsline {section}{\numberline {1.1}Fundamentals}{1}{}%
-\contentsline {subsection}{\numberline {1.1.1}Expectation, Variance and Moments}{1}{}%
-\contentsline {subsection}{\numberline {1.1.2}Distributions}{3}{}%
-\contentsline {section}{\numberline {1.2}Sampling Theory}{5}{}%
-\contentsline {chapter}{\numberline {2}Exercises}{8}{}%
+\contentsline {subsection}{\numberline {1.1.1}Expectation, Variance and Moments}{2}{}%
+\contentsline {subsection}{\numberline {1.1.2}Distributions}{4}{}%
+\contentsline {section}{\numberline {1.2}Sampling Theory}{7}{}%
