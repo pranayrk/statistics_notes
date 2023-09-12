@@ -53,6 +53,46 @@
 \chapter{Definitions and Theory}
 \line(1,0){360} \\
 
+\section{Miscellaneous}
+
+\begin{defn}
+    $\Gamma(\alpha)$ denotes the gamma function which is defined as $\Gamma(\alpha) = \displaystyle\int_0^\infty t ^{\alpha - 1} e ^{-t} \mathop{\mathrm{d} t}$, where $\alpha > 0$. It is a commonly used extension of the factorial function.
+\end{defn}
+
+\begin{thm}
+    The Gamma function has the following properties:
+    \begin{enumerate}
+        \item The improper integral converges for all $\alpha > 0$.
+        \item $\Gamma(\alpha) > 0$  for all $\alpha > 0$, $\Gamma(\alpha) \to \infty$ as $\alpha \to 0$.
+        \item $\Gamma(1) = 1$
+        \item $\Gamma(\alpha + 1) = \alpha \Gamma(\alpha)$
+        \item For $n \in \mathbb{N}$, $\Gamma(n) = (n-1)!$
+        \item $\Gamma(\frac{1}{2}) = \sqrt{\pi}$
+    \end{enumerate}
+\end{thm}
+
+\begin{defn}
+    For $\alpha > 0, \beta > 0$, the beta function is defined as $B(\alpha, \beta) = \displaystyle\int_0^1 x^{\alpha -1} (1-x)^{\beta - 1} dx$.
+    \\
+
+    Alternatively, the beta function can be written as $B(\alpha, \beta) = \displaystyle\int_0^\infty \frac{t^{\alpha - 1}}{(1+t)^{\alpha + \beta}} dt$
+\end{defn}
+
+\begin{prop}[Relation between beta function and gamma function]\ \\
+    $B(\alpha, \beta) = \displaystyle\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha + \beta)}$
+\end{prop}
+
+
+\begin{prop}[Limit Comparison Test for Improper Integrals]
+    Let $a \in \mathbb{R}$ and $f,g: [a, \infty) \to \mathbb{R}$ be such that both $f$ and $g$ are integrable on $[a,x]$ for every $x \geq a$ with $f(t) > 0$ and $g(t) > 0$ for all large $t$. \\ Assume that
+    $\displaystyle \lim_{t \to \infty} \frac{f(t)}{g(t)} = l$ where $l \in [0, \infty]$. Then:
+    \begin{itemize}
+        \item If $l \in (0, \infty)$, then $\int_a^\infty f(x)dx$ converges $\iff$ $\int_a^\infty g(x)dx$ converges
+        \item If $l = 0$, and $\int_a^\infty g(x)dx$ converges then $\int_a^\infty f(x)dx$ converges
+        \item If $l = \infty$ and $\int_a^\infty f(x)dx$ converges then $\int_a^\infty g(x)dx$ converges absolutely
+    \end{itemize}
+\end{prop}
+
 \section{Fundamentals}
 
 \begin{defn}
@@ -71,6 +111,17 @@
     If $X$ and $Y$ are independent continuous random variables with pdfs $f_X(x)$ and $f_Y(y)$, then the pdf of $Z = X+Y$ is $f_Z\left (z\right ) = \displaystyle\int_{- \infty}^\infty f_X \left (w\right ) f_Y \left (z - w\right ) \mathop{\mathrm{d} w}$
 \end{thm}
 
+\begin{prop}
+    Let $(X,Y)$ be a random vector with joint density $f(x,y)$ and $g,h$ be continuous and differentiable real valued functions of two variables. Then to obtain the joint pdf of $(g(X,Y), h(X,Y))$ we consider the equations $g(x,y) = z$ and $h(x,y) = w$. There may be many such points $(x,y)$ which map to $z$ and $w$ under $g$ and $h$ respectively.
+
+    Let the points $(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)$ represent the points which satisfy $g(x_i, y_i) = z$ and $h(x_i, y_i) = w$.
+
+    We can find these points as $\{x_i\} = g^{-1}(z,w)$ and $\{ y_i \} = h^{-1}(z,w)$.
+
+    Compute $J(x_i, y_i) = \begin{bmatrix} \frac{\partial g}{\partial x} & \frac{\partial g}{\partial y} \\ \frac{\partial h}{\partial x} & \frac{\partial h}{\partial y} \end{bmatrix}_{(x = x_i, y = y_i)}$
+
+        Then the joint pdf is $k(z,w) = \displaystyle \sum_i \frac{1}{|J(x_i, y_i)|} f(x_i, y_i)$
+\end{prop}
 
 \subsection{Expectation, Variance and Moments}
 
@@ -175,6 +226,7 @@ The $r$-th derivative of the moment generating funtion is the $r$-th moment abou
     $X$ and $Y$ are independent random variables if and only if $M(t_1, t_2) = M(t_1, 0) M(0, t_2)$ for all $t_1 \in [-h_1, h_1], t_2 \in [-h_2, h_2]$
 \end{thm}
 
+
 \subsection{Distributions}
 
 \begin{defn}
@@ -246,22 +298,6 @@ The mean, variance, higher moments, moment generating function of a Cauchy rando
 \end{prop}
 
 \begin{defn}
-    $\Gamma(\alpha)$ denotes the gamma function which is defined as $\Gamma(\alpha) = \displaystyle\int_0^\infty t ^{\alpha - 1} e ^{-t} \mathop{\mathrm{d} t}$, where $\alpha > 0$. It is a commonly used extension of the factorial function.
-\end{defn}
-
-\begin{thm}
-    The Gamma function has the following properties:
-    \begin{enumerate}
-        \item The improper integral converges for all $\alpha > 0$.
-        \item $\Gamma(\alpha) > 0$  for all $\alpha > 0$, $\Gamma(\alpha) \to \infty$ as $\alpha \to 0$.
-        \item $\Gamma(1) = 1$
-        \item $\Gamma(\alpha + 1) = \alpha \Gamma(\alpha)$
-        \item For $n \in \mathbb{N}$, $\Gamma(n) = (n-1)!$
-        \item $\Gamma(\frac{1}{2}) = \sqrt{\pi}$
-    \end{enumerate}
-\end{thm}
-
-\begin{defn}
     A random variable with the pdf $f(x) = \displaystyle  \frac{1}{\Gamma(\alpha) \beta^\alpha} x^{\alpha - 1} e^{-x/\beta}$ where $0 < x < \infty, \alpha > 0, \beta > 0$ is called a \textbf{gamma random variable} $G(\alpha, \beta)$ with parameters $\alpha$ and $\beta$.
 \end{defn}
 \begin{prop}
@@ -295,6 +331,48 @@ Let $X \sim N(0,1)$. Then $X^2 \sim \chi_1^2$
     Let $X_1, X_2, ..., X_n$ be independent normal random variables with mean $0$ and variance $1$. Then $\chi^2 = X_1^2 + X_2^2 + ... + X_p^2$ is chi-square distributed with $p$ degrees of freedom.
 \end{prop}
 
+\begin{defn}
+    A random variable $T$ has the \textbf{Students t-distribution} with $p$ degrees of freedom, and we write $T \sim t_p$ if it has pdf $f_p (t) = \displaystyle \frac{\Gamma(\frac{p+1}{2})}{\Gamma(\frac{p}{2})} \frac{1}{(p \pi)^{\frac{1}{2}}} \frac{1}{(1 + \frac{t^2}{p})^{\frac{(p+1)}{2}}} $ for $- \infty < t < \infty$
+\end{defn}
+
+\begin{prop}
+    If $p=1$, $T$ is a Cauchy$(0,1)$ distribution with distribution $f_p(t) = \displaystyle\frac{\Gamma(1)}{\Gamma(\frac{1}{2})} \frac{1}{\pi^\frac{1}{2}} \frac{1}{1+t^2}$. So we will assume that $p > 1$.
+\end{prop}
+
+\begin{prop}
+    Let $T \sim t_p$. Then $E[T^r]$ exists for $r < p$ and \\ $E[T^r] = \begin{cases} 0 & \text{ if } r \text{ is odd } \\   \displaystyle p^{\frac{r}{2}} \frac{\Gamma(\frac{r+1}{2})\Gamma(\frac{p-r}{2})}{\Gamma(\frac{p}{2})\Gamma(\frac{1}{2})} & \text{ if } r \text{ is even }\end{cases}$
+\end{prop}
+
+\begin{prop}
+    The Students t-distribution has no MGF because it does not have moments of all orders.
+\end{prop}
+
+\begin{prop}
+    Let $T \sim t_p$, $p > 2$ be a random variable with Student's $t$-distribution. Then $T$ has mean $\mu = 0$ and variance $\sigma^2 = \displaystyle \frac{p}{p-2}$.
+\end{prop}
+
+\begin{defn}
+    A random variable $X \sim F(m,n)$ has the \textbf{$F$-distribution} with $m$ and $n$ degrees of freedom if it has pdf \\ 
+    $ f_F(t) = \displaystyle \frac{\Gamma\left(\frac{m + n}{2} \right)}{\Gamma\left(\frac{m}{2} \right) \Gamma\left(\frac{n}{2} \right)} \displaystyle \left(\frac{m}{n}\right)^{\frac{m}{2}} \frac{t^{\frac{m}{2} - 1}}{(1 + \frac{m}{n}t)^{\frac{m + n}{2}}} $ where $t > 0$
+\end{defn}
+
+\begin{prop}
+    If $X \sim t_n$, then $X^2 \sim F(1,n)$. In particular if $X \sim C(0,1)$, i.e. $X \sim t_1$, then $X^2 \sim F(1,1)$.
+\end{prop}
+
+\begin{prop}
+    Let $X \sim F(m,n)$. Then for $k \in \mathbb{N}$, $E[X^k] =\displaystyle \left(\frac{n}{m}\right)^k \frac{\Gamma(k + \frac{m}{2}) \Gamma(\frac{n}{2} - k)}{\Gamma(\frac{m}{2}) \Gamma(\frac{n}{2})}$ for $n > 2k$.
+\end{prop}
+
+\begin{prop}
+    Let $X \sim F(m,n)$. Then $X$ has mean $\mu = \displaystyle \frac{n}{n-2}$ and variance $\sigma^2 = \displaystyle \frac{n^2 (2m + 2n - 4)}{m (n-2)^2 (n-4)}$ for $n > 4$.
+\end{prop}
+
+\begin{defn}
+    A random variable $X \sim \text{beta}(\alpha, \beta)$ has the \textbf{beta distribution} if it has pdf \\
+    $ f(x) = \displaystyle \frac{1}{B(\alpha, \beta)} x^{\alpha-1} (1-x)^{\beta - 1}$ for $0 < x < 1$.
+\end{defn}
+
 \section{Sampling Theory}
 We can either sample \textit{with replacement} or \textit{without replacement}. A finite population sampled with replacement can be considered infinite. Sampling from a very large finite population can similarly be considered as sampling from an infinite population. 
 
@@ -309,7 +387,8 @@ Let $X$ be a random variable with a distribution $f$, and let $X_1, X_2, ..., X_
 Then the collection $X_1, X_2, ..., X_n$ is called a \textbf{random sample} of size $n$ from the population $f$.
 \end{defn}
 
-Since $X_1, X_2, ..., X_n$ are iid, the joint distribution of the random sample is $f(x_1, x_2, ..., x_n) = f(x_1) f(x_2) ... f(x_n)$.
+Since $X_1, X_2, ..., X_n$ are iid, the joint distribution of the random sample is \\
+$f(x_1, x_2, ..., x_n) = f(x_1) f(x_2) ... f(x_n)$.
 
 Any quantity obtained from a sample for the purpose of estimating a population parameter is called a sample
 statistic, or briefly statistic. Mathematically, a sample statistic for a sample of size n can be defined as a function of the random variables $X_1, X_2, ..., X_n$ as $T(X_1, X_2, ..., X_n)$. This itself is a random variable whose values can be represented as $T(x_1, x_2, ..., x_n)$.
@@ -343,13 +422,13 @@ Two common statistics are the sample mean and sample variance.
     \end{enumerate}
 \end{thm}
 
-From the above theorem we see that the sample mean $\bar{X}$ is an unbiased estimator of the population mean $\mu$ and the sample variance $S^2$ is an unbiased estimator of the population variance $\sigma^2$. (The reason we included $1/n-1$ in the  definition of the sample variance was to make it an unbiased estimator)
+From the above theorem we see that the sample mean $\bar{X}$ is an unbiased estimator of the population mean $\mu$ and the sample variance $S^2$ is an unbiased estimator of the population variance $\sigma^2$. (The reason we included $\frac{1}{n-1}$ in the  definition of the sample variance was to make it an unbiased estimator)
 
 \begin{defn}
     Let $X_1, X_2, ..., X_n$ be a random sample of size $n$ from a population $f(x|\theta)$. The probability distribution of a statistic $T(X_1, X_2, ..., X_n)$ is called the sampling distribution of $T$.
 \end{defn}
 
-\begin{thm}[Distribution of the sample mean]
+\begin{thm}[MGF of the sample mean]
     Let $X_1, X_2, ..., X_n$ be a random sample from a population with MGF $M_X(t)$. Then the MGF of the sample mean is $M_{\bar{X}} (t) = (M_X (t/n))^n$.
 \end{thm}
 
@@ -364,6 +443,30 @@ From the above theorem we see that the sample mean $\bar{X}$ is an unbiased esti
     and let $X$ denote the sample mean and $S^2$ denote the sample variance. Then $X$ and $S^2$ are independent random variables.
 \end{thm}
 The converse of this theorem is also true: if the sample mean and sample variance of a random sample are independent random variables then population distribution is normal.
+
+\begin{thm}
+    Let $X_1, X_2, ... , X_n$ be a random sample from a $N(\mu, \sigma^2)$ distribution and let $\overline{X}$ denote the sample mean and $S^2$ denote the sample variance. Then $(n-1) \frac{S^2}{\sigma^2}$ has a chi-square distribution with $(n-1)$ degrees of freedom.
+\end{thm}
+
+\begin{defn}
+    Let $X_1, X_2, ..., X_n$ be a random sample and $x_1, x_2, ..., x_n$ be values taken by these random variables.
+    Arrange $(x_1, x_2, ..., x_n)$ in increasing order of magnitude so, $x_{(1)} \leq x_{(2)} \leq ... \leq x_{(n)}$
+    where $x_{(1)} = \text{min}(x_1, x_2, ..., x_n)$, $x_{(2)}$ is the second smallest value and so on and $x_{(n)} = \text{max}(x_1, x_2, ..., x_n)$. If any two $x_i, x_j$ are equal, their order does not matter.
+
+    
+    The function $X_{(k)}$ of $(X_1, X_2, ..., X_n)$ that takes on the value $x_{(k)}$ in each possible sequence $(x_1, x_2, ... , x_n)$ of values assumed by $(X_1, X_2, ..., X_n)$ is known as the \textbf{$k$-th order statistic}. 
+
+    ${X_{(1)}, X_{(2)}, ..., X_{(n)}}$ is called the \textbf{set of order statistics} for $(X_1, X_2, ..., X_n)$
+\end{defn}
+
+\begin{defn}
+    The \textbf{sample range} $R = X_{(n)} - X_{(1)}$ is the distance between the smallest and largest observations. It is the measure of the dispersion in the sample and should reflect the dispersion of the population.
+\end{defn}
+
+\begin{defn}
+    In terms of order statistics, the \textbf{sample median} $M$ is defined by \\ 
+    $M = \begin{cases} X_{(\frac{n+1}{2})} & \text{ if } n \text{ is odd } \\ \frac{1}{2} \left[ X_{(\frac{n}{2})} + X_{(\frac{n}{2} + 1)}\right] & \text{ if } n \text{ is even } \end{cases}$.
+\end{defn}
 
 \end{document}
 

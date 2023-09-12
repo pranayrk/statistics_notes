@@ -12,7 +12,8 @@ Let $X$ be a random variable with a distribution $f$, and let $X_1, X_2, ..., X_
 Then the collection $X_1, X_2, ..., X_n$ is called a \textbf{random sample} of size $n$ from the population $f$.
 \end{defn}
 
-Since $X_1, X_2, ..., X_n$ are iid, the joint distribution of the random sample is $f(x_1, x_2, ..., x_n) = f(x_1) f(x_2) ... f(x_n)$.
+Since $X_1, X_2, ..., X_n$ are iid, the joint distribution of the random sample is \\
+$f(x_1, x_2, ..., x_n) = f(x_1) f(x_2) ... f(x_n)$.
 
 Any quantity obtained from a sample for the purpose of estimating a population parameter is called a sample
 statistic, or briefly statistic. Mathematically, a sample statistic for a sample of size n can be defined as a function of the random variables $X_1, X_2, ..., X_n$ as $T(X_1, X_2, ..., X_n)$. This itself is a random variable whose values can be represented as $T(x_1, x_2, ..., x_n)$.
@@ -46,13 +47,13 @@ Two common statistics are the sample mean and sample variance.
     \end{enumerate}
 \end{thm}
 
-From the above theorem we see that the sample mean $\bar{X}$ is an unbiased estimator of the population mean $\mu$ and the sample variance $S^2$ is an unbiased estimator of the population variance $\sigma^2$. (The reason we included $1/n-1$ in the  definition of the sample variance was to make it an unbiased estimator)
+From the above theorem we see that the sample mean $\bar{X}$ is an unbiased estimator of the population mean $\mu$ and the sample variance $S^2$ is an unbiased estimator of the population variance $\sigma^2$. (The reason we included $\frac{1}{n-1}$ in the  definition of the sample variance was to make it an unbiased estimator)
 
 \begin{defn}
     Let $X_1, X_2, ..., X_n$ be a random sample of size $n$ from a population $f(x|\theta)$. The probability distribution of a statistic $T(X_1, X_2, ..., X_n)$ is called the sampling distribution of $T$.
 \end{defn}
 
-\begin{thm}[Distribution of the sample mean]
+\begin{thm}[MGF of the sample mean]
     Let $X_1, X_2, ..., X_n$ be a random sample from a population with MGF $M_X(t)$. Then the MGF of the sample mean is $M_{\bar{X}} (t) = (M_X (t/n))^n$.
 \end{thm}
 
@@ -67,3 +68,27 @@ From the above theorem we see that the sample mean $\bar{X}$ is an unbiased esti
     and let $X$ denote the sample mean and $S^2$ denote the sample variance. Then $X$ and $S^2$ are independent random variables.
 \end{thm}
 The converse of this theorem is also true: if the sample mean and sample variance of a random sample are independent random variables then population distribution is normal.
+
+\begin{thm}
+    Let $X_1, X_2, ... , X_n$ be a random sample from a $N(\mu, \sigma^2)$ distribution and let $\overline{X}$ denote the sample mean and $S^2$ denote the sample variance. Then $(n-1) \frac{S^2}{\sigma^2}$ has a chi-square distribution with $(n-1)$ degrees of freedom.
+\end{thm}
+
+\begin{defn}
+    Let $X_1, X_2, ..., X_n$ be a random sample and $x_1, x_2, ..., x_n$ be values taken by these random variables.
+    Arrange $(x_1, x_2, ..., x_n)$ in increasing order of magnitude so, $x_{(1)} \leq x_{(2)} \leq ... \leq x_{(n)}$
+    where $x_{(1)} = \text{min}(x_1, x_2, ..., x_n)$, $x_{(2)}$ is the second smallest value and so on and $x_{(n)} = \text{max}(x_1, x_2, ..., x_n)$. If any two $x_i, x_j$ are equal, their order does not matter.
+
+    
+    The function $X_{(k)}$ of $(X_1, X_2, ..., X_n)$ that takes on the value $x_{(k)}$ in each possible sequence $(x_1, x_2, ... , x_n)$ of values assumed by $(X_1, X_2, ..., X_n)$ is known as the \textbf{$k$-th order statistic}. 
+
+    ${X_{(1)}, X_{(2)}, ..., X_{(n)}}$ is called the \textbf{set of order statistics} for $(X_1, X_2, ..., X_n)$
+\end{defn}
+
+\begin{defn}
+    The \textbf{sample range} $R = X_{(n)} - X_{(1)}$ is the distance between the smallest and largest observations. It is the measure of the dispersion in the sample and should reflect the dispersion of the population.
+\end{defn}
+
+\begin{defn}
+    In terms of order statistics, the \textbf{sample median} $M$ is defined by \\ 
+    $M = \begin{cases} X_{(\frac{n+1}{2})} & \text{ if } n \text{ is odd } \\ \frac{1}{2} \left[ X_{(\frac{n}{2})} + X_{(\frac{n}{2} + 1)}\right] & \text{ if } n \text{ is even } \end{cases}$.
+\end{defn}
