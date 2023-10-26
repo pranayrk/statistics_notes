@@ -1,4 +1,4 @@
-\section{Sampling Theory}
+\section*{Sampling Theory}
 We can either sample \textit{with replacement} or \textit{without replacement}. A finite population sampled with replacement can be considered infinite. Sampling from a very large finite population can similarly be considered as sampling from an infinite population. 
 
 To properly choose the sample, we can make sure that every member of the population has an equal chance of being in the sample.
@@ -91,4 +91,100 @@ The converse of this theorem is also true: if the sample mean and sample varianc
 \begin{defn}
     In terms of order statistics, the \textbf{sample median} $M$ is defined by \\ 
     $M = \begin{cases} X_{(\frac{n+1}{2})} & \text{ if } n \text{ is odd } \\ \frac{1}{2} \left[ X_{(\frac{n}{2})} + X_{(\frac{n}{2} + 1)}\right] & \text{ if } n \text{ is even } \end{cases}$.
+\end{defn}
+
+\begin{thm}
+    Let $X_{(1)}, X_{(2)}, ..., X_{(n)}$ denote the order statistics of the random sample $X_1, X_2, ..., X_n$ from a continuous population with cdf $F_X(x)$ and the pdf $f_X(x)$.
+    Then the pdf of $X_{(j)}$ is 
+    \\$f_{X_{(j)}}(x)= \displaystyle \frac{n!}{(j-1)! (n-j)!} f_X(x) [F_X(x)]^{j-1} [1-F_X(x)]^{n-j}$ for $x \in \mathbb{R}$
+\end{thm}
+
+\begin{thm}
+    Let $X_{(1)}, X_{(2)}, ..., X_{(n)}$ denote the order statistics of the random sample $X_1, X_2, ..., X_n$ from a continuous population with cdf $F_X(x)$ and the pdf $f_X(x)$. Then the joint pdf of all the order statistics is given by
+    \\$ f_{X_{(1)}, X_{(2)}, ..., X_{(n)}} = \begin{cases} n! f_X(x_1) ... f_X(x_n) & -\infty < x_1 < x_2 < ... < x_n < \infty \\ 0 & \text{ otherwise }\end{cases}$
+\end{thm}
+
+\begin{thm}
+    Let $X_{(1)}, X_{(2)}, ..., X_{(n)}$ denote the order statistics of the random sample $X_1, X_2, ..., X_n$ from a continuous population with cdf $F_X(x)$ and the pdf $f_X(x)$.
+
+    Then the joint pdf of $X_{(i)}$ and $X_{(j)}$ where $1 \leq i \leq j \leq n$ is given by \\ 
+    $ f_{X_{(i)}, X_{(j)}}(u,v) = \begin{cases} \displaystyle \frac{n! f_X(u) f_X(v) [F_X(u)]^{i-1} [1-F_X(v)]^{n-j} [F_X(v) - F_X(u)]^{j-1-i}}{(i-1)!(j-1-i)!(n-j)!} & -\infty < u < v < \infty \\ 0 & \text{ otherwise } \end{cases}$
+\end{thm}
+
+\begin{thm}
+    Suppose $X_1, X_2, ..., X_n$ are iid random variables with common pdf $f$ and CDF $F$. Let $g$ be a real valued function such that $E|g(X)| < \infty$ where $X \sim F$. Then for $1 \leq j \leq n$, $E|g(X_{(j)})|$ exists. Converse holds as well.
+\end{thm}
+
+\begin{note}
+    If $E|g(X_{(j)})| = \infty$ for some $j$, then $E|g(X)| = \infty$ and conversely, \\if $E|g(X)|=\infty$, then $E|g(X_{(j)}| = \infty$ for some $j$.
+\end{note}
+
+\begin{defn}
+    Suppose a sequence of random variables $(X_n)_{n \geq 1}$ and a random variable $X$ are defined on a probability space $(\Omega, \mathcal{F}, P)$. We say that the sequence of random variables $X_1, X_2, ...$ \textbf{converges in probability} to the random variable $X$ (written $X_n \overset{p}{\to} X$) if for every $\epsilon > 0$, $ \lim_{n \to \infty} P(|X_n - X| > \epsilon) = 0$ or equivalently $\lim_{n \to \infty} P(|X_n - X| \leq \epsilon) = 1$
+\end{defn}
+
+\begin{note}
+    The random variables in the sequence $X_1, X_2, ...$ are typically not iid random variables
+\end{note}
+
+\begin{thm}
+    Suppose $X_n \overset{p}{\to} X$ and $Y_n \overset{p}{\to} Y$. Then $X_n \pm Y_n \overset{p}{\to} X \pm Y$  and $X_n Y_n \overset{p}{\to} XY$
+\end{thm}
+
+\begin{thm}
+    Suppose $X_n \overset{p}{\to} a$, where $a$ is a non-zero constant. Then $\frac{1}{X_n} \overset{p}{\to} \frac{1}{a}$
+\end{thm}
+
+\begin{thm}
+    Let $X_n \overset{p}{\to} X$ and $h$ be a real valued continuous function of a real variable. Then $h(X_n) \overset{p}{\to} h(X)$
+\end{thm}
+
+\begin{defn}
+    We say that a sequence of estimators $W_n = W_n(X_1, ..., X_n)$ is a \textbf{consistent sequence of estimators} of the parameter $\theta$ if $W_n \overset{p}{\to} \theta$ as $n \to \infty$ for each fixed $\theta \in \Theta$.
+\end{defn}
+
+\begin{note}
+    This basically means the estimator converges to the proper value as the sample size becomes infinite, i.e. approaches the size of the population itself.
+\end{note}
+
+\begin{thm}[Weak Law of Large Numbers]
+    Let $X_1, X_2, ..$ be iid random variables with $EX_i = \theta$. Define $\overline{X_n} = \frac{1}{n} \sum_{i=1}^n X_i$. Then $\overline{X_n} \overset{p}{\to} \theta$. \\
+    The weak law of large numbers states that for any population with a finite mean $\theta$, the sample mean $\overline{X_n}$ is a consistent estimator for the population mean $\theta$.
+\end{thm}
+
+\begin{thm}[Markov's Inequality]
+    Let $X$ be a random variable with finite $r$-moment where $r > 0$. Then for every $\epsilon > 0$, $P(|X| \geq \epsilon) \leq \frac{E|X^r|}{\epsilon^r}$
+\end{thm}
+
+\begin{thm}[Chebyshev's Inequality]
+    Let $X$ be a random variable with finite mean $\mu$ and finite variance $\sigma^2$. Then for every $\epsilon > 0$, $P(|X-\mu| \geq \epsilon) \leq \frac{\sigma^2}{\epsilon^2}$
+\end{thm}
+
+\begin{thm}
+    Suppose we have a sequence $X_1, X_2, ...$ of iid random variables with $EX_i = \mu$ and $Var(X_i) = \sigma^2 < \infty$. Define the sample variance $S_n^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline{X_n})^2$. Then a sufficient condition that $S_n^2$ converges in probability to $\sigma^2$ is that $Var(S_n^2) \to 0$ as $n \to \infty$.
+\end{thm}
+
+
+\begin{thm}
+    Consider a sequence of estimators $W_n$ each having finite mean and variance. If $W_n$ is a sequence of estimators such that $EW_n \to \theta$ and $Var(W_n) \to 0$ as $n \to \infty$, then $W_n$ is consistent for $\theta$.
+\end{thm}
+
+\begin{thm}
+    Let $W_n$ be a consistent sequence of estimators for a parameter $\theta$. Let $a_1, a_2, ...$ and $b_1, b_2, ...$ be sequences of real numbers such that $a_n \to 1$ and $b_n \to 0$. Then the sequence $U_n = a_n W_n + b_n$ is a consistent sequence of estimators of $\theta$.
+\end{thm}
+
+\begin{thm}
+    If $S_n^2$ is a consistent estimator of $\sigma^2$, then the sample standard deviation $Sn = \sqrt{S_n^2}$ is a consistent estimator of $\sigma$
+\end{thm}
+
+\begin{defn}
+    Let $X_1, X_2, ..., X_n$ be a random sample. The \textbf{sample moment of order $k$} (where $k$ is a positive integer) is defined as $m_k = \frac{1}{n} \sum_{i=1}^n X_i^k$
+\end{defn}
+
+\begin{note}
+    Even if the population does not have any moment, sample moments of all orders exists
+\end{note}
+
+\begin{defn}
+    We say that a sequence of random variables $X_1, X_2, ...$ \textbf{converges in distribution} to a random variable $X$ (written $X_n \overset{d}{\to} X$) if $\lim_{n \to \infty} F_{X_n}(x) = F_X(x)$ at all points $x$ where $F_X(x)$ is continuous.
 \end{defn}

@@ -1,5 +1,4 @@
 map:
   - src/preamble.tex
   - src/definitions
-    #  - src/exercises
   - src/closing.tex

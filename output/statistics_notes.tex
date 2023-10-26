@@ -1,4 +1,4 @@
-\documentclass[12pt,twoside]{report}
+\documentclass[14pt,twoside]{extreport}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsfonts,graphicx,amsthm}
 \usepackage{epsfig,amssymb}
@@ -7,53 +7,39 @@
 \usepackage{lipsum}
 \usepackage{thmtools}
 \usepackage{enumitem}
-\usepackage[top=1.25in, bottom=1.25in,left=1.5in, right=1.25in]{geometry}
+\usepackage[margin=0.75in]{geometry}
 
-\newtheoremstyle{thmstyle}{10pt}{20pt}{}{}{\bfseries}{:}{.5em}{}
-\theoremstyle{thmstyle}
-
-\newtheorem{defn}{Definition}
-\newtheorem{note}{Note}
-\newtheorem{notation}[subsection]{Notation}
-\newtheorem{thm}{Theorem}
-\newtheorem{corollary}[subsection]{Corollary}
-\newtheorem{eg}[subsection]{Example}
-\newtheorem{lemma}[subsection]{Lemma}
-\newtheorem{result}[subsection]{Result}
-\declaretheoremstyle[bodyfont=\normalfont]{normalbody}
-\declaretheorem[style=normalbody,name=]{ex}
-\newtheorem{remark}[subsection]{Remark}
-\newtheorem{prop}[subsection]{Proposition}
-\newenvironment*{ans}{\textbf{ans.}\space\em\\}{\par}
-\newenvironment*{source}{\hfill\scriptsize\textbf{Source.}\space}{\par}
-
-\declaretheoremstyle[headfont=\normalfont]{normalhead}
-
-\makeatletter
-\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
-\makeatother
-
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
 \widowpenalties 1 10000
 \raggedbottom
 \setlength{\parindent}{0pt}
 \renewcommand{\chaptername}{}
+\newcommand{\hhrule}{\vspace{1cm}\hrule\vspace{1cm}}
 
-\setlength{\oddsidemargin}{6pt}
-\setlength{\evensidemargin}{6pt}
+\newtheoremstyle{dotless}{}{}{}{}{\bfseries}{}{\newline}{}
+\theoremstyle{dotless}
+\newtheorem*{defn}{Definition}
+\newtheorem*{thm}{Theorem}
+\newtheorem*{note}{Note}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{result}{Result}
+\newtheorem*{remark}{Remark}
+\newtheorem*{prop}{Proposition}
 
-\parskip=3pt plus 3pt
-\setlength{\parindent}{0pt}
+\everymath{\displaystyle}
 
 \begin{document}
 
-\tableofcontents
 \newpage
 \pagenumbering{arabic}
 
-\chapter{Definitions and Theory}
+\chapter*{Mathematical Statistics}
 \line(1,0){360} \\
 
-\section{Miscellaneous}
+\section*{Miscellaneous}
 
 \begin{defn}
     $\Gamma(\alpha)$ denotes the gamma function which is defined as $\Gamma(\alpha) = \displaystyle\int_0^\infty t ^{\alpha - 1} e ^{-t} \mathop{\mathrm{d} t}$, where $\alpha > 0$. It is a commonly used extension of the factorial function.
@@ -93,14 +79,18 @@
     \end{itemize}
 \end{prop}
 
-\section{Fundamentals}
+\section*{Fundamentals}
 
 \begin{defn}
     Two random vectors $(X_1, X_2, ... , X_n)$ and $(Y_1, Y_2, ... , Y_n)$ are said to be \textbf{independent} if $F(x_1, x_2, ..., x_m, y_1, y_2, ..., y_n) = F_1 (x_1, x_2, ..., x_m) F_2 (x_1, x_2, ..., x_n)$ for all $(x_1, x_2, ..., x_m, y_1, y_2, ..., y_n) \in \mathbb{R}^{m+n}$ where $F, F_1, F_2$ are the joint CDF's of $(X_1, X_2, ..., X_m, Y_1, Y_2, ..., Y_n)$, $(X_1, X_2, ..., X_m)$ and $(Y_1, Y_2, ..., Y_n)$ respectively.
 \end{defn}
 
 \begin{thm}
-    Let $X = (X_1, X_2, · · · , X_m)$ and $Y = (Y_1, Y_2, · · · , Y_n)$ be independent random vectors. Then the component $X_j$ of $X(j = 1, 2, · · · , m)$ and the component $Y_k$ of $Y(k = 1, 2, · · · , n)$ are independent random variables. If $h$ and $g$ are Borel-measurable functions, $h(X_1, X_2, · · · , X_m)$ and $g(Y_1, Y_2, · · · , Y_n)$ are independent.
+    Let $X = (X_1, X_2, ... , X_m)$ and $Y = (Y_1, Y_2, ... , Y_n)$ be independent random vectors. Then the component $X_j$ of $X(j = 1, 2, ... , m)$ and the component $Y_k$ of $Y(k = 1, 2, ... , n)$ are independent random variables. If $h$ and $g$ are Borel-measurable functions, $h(X_1, X_2, ..., X_m)$ and $g(Y_1, Y_2, ... , Y_n)$ are independent.
+\end{thm}
+
+\begin{thm}
+    Suppose $(X,Y)$ have joint pdf $f$. Then $X$ and $Y$ are independent iff for some constant $k > 0$ and non-negative functions $f_1$ and $f_2$, $f(x,y) = k f_1(x)f_2(y)$ for all $(x,y) \in \mathbb{R}^2$
 \end{thm}
 
 \begin{thm}
@@ -123,7 +113,7 @@
         Then the joint pdf is $k(z,w) = \displaystyle \sum_i \frac{1}{|J(x_i, y_i)|} f(x_i, y_i)$
 \end{prop}
 
-\subsection{Expectation, Variance and Moments}
+\subsection*{Expectation, Variance and Moments}
 
 \begin{defn}
     The \textbf{expectation} of a discrete random variable $X$ having values $x_1, x_2, ..., x_n$ and probability function $f(x)$ is defined as $E\left (X\right ) = \sum_{i=1}^n x_i f\left (x_i\right )$.
@@ -227,7 +217,7 @@ The $r$-th derivative of the moment generating funtion is the $r$-th moment abou
 \end{thm}
 
 
-\subsection{Distributions}
+\subsection*{Distributions}
 
 \begin{defn}
     Let $p$ be the probability that an event will happen in any single Bernoulli trial (trial with outcomes either success or failure). The probability that an event will happen exactly $x$ times in $n$ trials is given by the \textbf{Binomial Random Variable} with pmf distribution $f(x) = {n \choose k} p^x (1-p)^{n-x} = \displaystyle \frac{n!}{x! (n-x)!} p^x (1-p)^{n-x}$, where $x = 0, 1, ... , n$.
@@ -373,7 +363,16 @@ Let $X \sim N(0,1)$. Then $X^2 \sim \chi_1^2$
     $ f(x) = \displaystyle \frac{1}{B(\alpha, \beta)} x^{\alpha-1} (1-x)^{\beta - 1}$ for $0 < x < 1$.
 \end{defn}
 
-\section{Sampling Theory}
+\begin{defn}
+    A random variable $X$ has the \textbf{Pareto distribution} with parameters $\alpha > 0$ and $\beta > 0$ if it has pdf \\
+    $f(x) = \begin{cases} \displaystyle \frac{\beta \alpha^\beta}{x^{\beta + 1}} & x \geq \alpha \\ 0 & x \leq \alpha \end{cases}$
+\end{defn}
+
+\begin{prop}
+    For Pareto's distribution with parameter $\alpha$ and $\beta$, the moment of order $n$ exists if and only if $n < \beta$. 
+\end{prop}
+
+\section*{Sampling Theory}
 We can either sample \textit{with replacement} or \textit{without replacement}. A finite population sampled with replacement can be considered infinite. Sampling from a very large finite population can similarly be considered as sampling from an infinite population. 
 
 To properly choose the sample, we can make sure that every member of the population has an equal chance of being in the sample.
@@ -466,6 +465,102 @@ The converse of this theorem is also true: if the sample mean and sample varianc
 \begin{defn}
     In terms of order statistics, the \textbf{sample median} $M$ is defined by \\ 
     $M = \begin{cases} X_{(\frac{n+1}{2})} & \text{ if } n \text{ is odd } \\ \frac{1}{2} \left[ X_{(\frac{n}{2})} + X_{(\frac{n}{2} + 1)}\right] & \text{ if } n \text{ is even } \end{cases}$.
+\end{defn}
+
+\begin{thm}
+    Let $X_{(1)}, X_{(2)}, ..., X_{(n)}$ denote the order statistics of the random sample $X_1, X_2, ..., X_n$ from a continuous population with cdf $F_X(x)$ and the pdf $f_X(x)$.
+    Then the pdf of $X_{(j)}$ is 
+    \\$f_{X_{(j)}}(x)= \displaystyle \frac{n!}{(j-1)! (n-j)!} f_X(x) [F_X(x)]^{j-1} [1-F_X(x)]^{n-j}$ for $x \in \mathbb{R}$
+\end{thm}
+
+\begin{thm}
+    Let $X_{(1)}, X_{(2)}, ..., X_{(n)}$ denote the order statistics of the random sample $X_1, X_2, ..., X_n$ from a continuous population with cdf $F_X(x)$ and the pdf $f_X(x)$. Then the joint pdf of all the order statistics is given by
+    \\$ f_{X_{(1)}, X_{(2)}, ..., X_{(n)}} = \begin{cases} n! f_X(x_1) ... f_X(x_n) & -\infty < x_1 < x_2 < ... < x_n < \infty \\ 0 & \text{ otherwise }\end{cases}$
+\end{thm}
+
+\begin{thm}
+    Let $X_{(1)}, X_{(2)}, ..., X_{(n)}$ denote the order statistics of the random sample $X_1, X_2, ..., X_n$ from a continuous population with cdf $F_X(x)$ and the pdf $f_X(x)$.
+
+    Then the joint pdf of $X_{(i)}$ and $X_{(j)}$ where $1 \leq i \leq j \leq n$ is given by \\ 
+    $ f_{X_{(i)}, X_{(j)}}(u,v) = \begin{cases} \displaystyle \frac{n! f_X(u) f_X(v) [F_X(u)]^{i-1} [1-F_X(v)]^{n-j} [F_X(v) - F_X(u)]^{j-1-i}}{(i-1)!(j-1-i)!(n-j)!} & -\infty < u < v < \infty \\ 0 & \text{ otherwise } \end{cases}$
+\end{thm}
+
+\begin{thm}
+    Suppose $X_1, X_2, ..., X_n$ are iid random variables with common pdf $f$ and CDF $F$. Let $g$ be a real valued function such that $E|g(X)| < \infty$ where $X \sim F$. Then for $1 \leq j \leq n$, $E|g(X_{(j)})|$ exists. Converse holds as well.
+\end{thm}
+
+\begin{note}
+    If $E|g(X_{(j)})| = \infty$ for some $j$, then $E|g(X)| = \infty$ and conversely, \\if $E|g(X)|=\infty$, then $E|g(X_{(j)}| = \infty$ for some $j$.
+\end{note}
+
+\begin{defn}
+    Suppose a sequence of random variables $(X_n)_{n \geq 1}$ and a random variable $X$ are defined on a probability space $(\Omega, \mathcal{F}, P)$. We say that the sequence of random variables $X_1, X_2, ...$ \textbf{converges in probability} to the random variable $X$ (written $X_n \overset{p}{\to} X$) if for every $\epsilon > 0$, $ \lim_{n \to \infty} P(|X_n - X| > \epsilon) = 0$ or equivalently $\lim_{n \to \infty} P(|X_n - X| \leq \epsilon) = 1$
+\end{defn}
+
+\begin{note}
+    The random variables in the sequence $X_1, X_2, ...$ are typically not iid random variables
+\end{note}
+
+\begin{thm}
+    Suppose $X_n \overset{p}{\to} X$ and $Y_n \overset{p}{\to} Y$. Then $X_n \pm Y_n \overset{p}{\to} X \pm Y$  and $X_n Y_n \overset{p}{\to} XY$
+\end{thm}
+
+\begin{thm}
+    Suppose $X_n \overset{p}{\to} a$, where $a$ is a non-zero constant. Then $\frac{1}{X_n} \overset{p}{\to} \frac{1}{a}$
+\end{thm}
+
+\begin{thm}
+    Let $X_n \overset{p}{\to} X$ and $h$ be a real valued continuous function of a real variable. Then $h(X_n) \overset{p}{\to} h(X)$
+\end{thm}
+
+\begin{defn}
+    We say that a sequence of estimators $W_n = W_n(X_1, ..., X_n)$ is a \textbf{consistent sequence of estimators} of the parameter $\theta$ if $W_n \overset{p}{\to} \theta$ as $n \to \infty$ for each fixed $\theta \in \Theta$.
+\end{defn}
+
+\begin{note}
+    This basically means the estimator converges to the proper value as the sample size becomes infinite, i.e. approaches the size of the population itself.
+\end{note}
+
+\begin{thm}[Weak Law of Large Numbers]
+    Let $X_1, X_2, ..$ be iid random variables with $EX_i = \theta$. Define $\overline{X_n} = \frac{1}{n} \sum_{i=1}^n X_i$. Then $\overline{X_n} \overset{p}{\to} \theta$. \\
+    The weak law of large numbers states that for any population with a finite mean $\theta$, the sample mean $\overline{X_n}$ is a consistent estimator for the population mean $\theta$.
+\end{thm}
+
+\begin{thm}[Markov's Inequality]
+    Let $X$ be a random variable with finite $r$-moment where $r > 0$. Then for every $\epsilon > 0$, $P(|X| \geq \epsilon) \leq \frac{E|X^r|}{\epsilon^r}$
+\end{thm}
+
+\begin{thm}[Chebyshev's Inequality]
+    Let $X$ be a random variable with finite mean $\mu$ and finite variance $\sigma^2$. Then for every $\epsilon > 0$, $P(|X-\mu| \geq \epsilon) \leq \frac{\sigma^2}{\epsilon^2}$
+\end{thm}
+
+\begin{thm}
+    Suppose we have a sequence $X_1, X_2, ...$ of iid random variables with $EX_i = \mu$ and $Var(X_i) = \sigma^2 < \infty$. Define the sample variance $S_n^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline{X_n})^2$. Then a sufficient condition that $S_n^2$ converges in probability to $\sigma^2$ is that $Var(S_n^2) \to 0$ as $n \to \infty$.
+\end{thm}
+
+
+\begin{thm}
+    Consider a sequence of estimators $W_n$ each having finite mean and variance. If $W_n$ is a sequence of estimators such that $EW_n \to \theta$ and $Var(W_n) \to 0$ as $n \to \infty$, then $W_n$ is consistent for $\theta$.
+\end{thm}
+
+\begin{thm}
+    Let $W_n$ be a consistent sequence of estimators for a parameter $\theta$. Let $a_1, a_2, ...$ and $b_1, b_2, ...$ be sequences of real numbers such that $a_n \to 1$ and $b_n \to 0$. Then the sequence $U_n = a_n W_n + b_n$ is a consistent sequence of estimators of $\theta$.
+\end{thm}
+
+\begin{thm}
+    If $S_n^2$ is a consistent estimator of $\sigma^2$, then the sample standard deviation $Sn = \sqrt{S_n^2}$ is a consistent estimator of $\sigma$
+\end{thm}
+
+\begin{defn}
+    Let $X_1, X_2, ..., X_n$ be a random sample. The \textbf{sample moment of order $k$} (where $k$ is a positive integer) is defined as $m_k = \frac{1}{n} \sum_{i=1}^n X_i^k$
+\end{defn}
+
+\begin{note}
+    Even if the population does not have any moment, sample moments of all orders exists
+\end{note}
+
+\begin{defn}
+    We say that a sequence of random variables $X_1, X_2, ...$ \textbf{converges in distribution} to a random variable $X$ (written $X_n \overset{d}{\to} X$) if $\lim_{n \to \infty} F_{X_n}(x) = F_X(x)$ at all points $x$ where $F_X(x)$ is continuous.
 \end{defn}
 
 \end{document}

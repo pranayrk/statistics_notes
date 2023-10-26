@@ -1,4 +1,4 @@
-\section{Miscellaneous}
+\section*{Miscellaneous}
 
 \begin{defn}
     $\Gamma(\alpha)$ denotes the gamma function which is defined as $\Gamma(\alpha) = \displaystyle\int_0^\infty t ^{\alpha - 1} e ^{-t} \mathop{\mathrm{d} t}$, where $\alpha > 0$. It is a commonly used extension of the factorial function.
@@ -38,14 +38,18 @@
     \end{itemize}
 \end{prop}
 
-\section{Fundamentals}
+\section*{Fundamentals}
 
 \begin{defn}
     Two random vectors $(X_1, X_2, ... , X_n)$ and $(Y_1, Y_2, ... , Y_n)$ are said to be \textbf{independent} if $F(x_1, x_2, ..., x_m, y_1, y_2, ..., y_n) = F_1 (x_1, x_2, ..., x_m) F_2 (x_1, x_2, ..., x_n)$ for all $(x_1, x_2, ..., x_m, y_1, y_2, ..., y_n) \in \mathbb{R}^{m+n}$ where $F, F_1, F_2$ are the joint CDF's of $(X_1, X_2, ..., X_m, Y_1, Y_2, ..., Y_n)$, $(X_1, X_2, ..., X_m)$ and $(Y_1, Y_2, ..., Y_n)$ respectively.
 \end{defn}
 
 \begin{thm}
-    Let $X = (X_1, X_2, · · · , X_m)$ and $Y = (Y_1, Y_2, · · · , Y_n)$ be independent random vectors. Then the component $X_j$ of $X(j = 1, 2, · · · , m)$ and the component $Y_k$ of $Y(k = 1, 2, · · · , n)$ are independent random variables. If $h$ and $g$ are Borel-measurable functions, $h(X_1, X_2, · · · , X_m)$ and $g(Y_1, Y_2, · · · , Y_n)$ are independent.
+    Let $X = (X_1, X_2, ... , X_m)$ and $Y = (Y_1, Y_2, ... , Y_n)$ be independent random vectors. Then the component $X_j$ of $X(j = 1, 2, ... , m)$ and the component $Y_k$ of $Y(k = 1, 2, ... , n)$ are independent random variables. If $h$ and $g$ are Borel-measurable functions, $h(X_1, X_2, ..., X_m)$ and $g(Y_1, Y_2, ... , Y_n)$ are independent.
+\end{thm}
+
+\begin{thm}
+    Suppose $(X,Y)$ have joint pdf $f$. Then $X$ and $Y$ are independent iff for some constant $k > 0$ and non-negative functions $f_1$ and $f_2$, $f(x,y) = k f_1(x)f_2(y)$ for all $(x,y) \in \mathbb{R}^2$
 \end{thm}
 
 \begin{thm}
@@ -68,7 +72,7 @@
         Then the joint pdf is $k(z,w) = \displaystyle \sum_i \frac{1}{|J(x_i, y_i)|} f(x_i, y_i)$
 \end{prop}
 
-\subsection{Expectation, Variance and Moments}
+\subsection*{Expectation, Variance and Moments}
 
 \begin{defn}
     The \textbf{expectation} of a discrete random variable $X$ having values $x_1, x_2, ..., x_n$ and probability function $f(x)$ is defined as $E\left (X\right ) = \sum_{i=1}^n x_i f\left (x_i\right )$.
@@ -172,7 +176,7 @@ The $r$-th derivative of the moment generating funtion is the $r$-th moment abou
 \end{thm}
 
 
-\subsection{Distributions}
+\subsection*{Distributions}
 
 \begin{defn}
     Let $p$ be the probability that an event will happen in any single Bernoulli trial (trial with outcomes either success or failure). The probability that an event will happen exactly $x$ times in $n$ trials is given by the \textbf{Binomial Random Variable} with pmf distribution $f(x) = {n \choose k} p^x (1-p)^{n-x} = \displaystyle \frac{n!}{x! (n-x)!} p^x (1-p)^{n-x}$, where $x = 0, 1, ... , n$.
@@ -317,3 +321,12 @@ Let $X \sim N(0,1)$. Then $X^2 \sim \chi_1^2$
     A random variable $X \sim \text{beta}(\alpha, \beta)$ has the \textbf{beta distribution} if it has pdf \\
     $ f(x) = \displaystyle \frac{1}{B(\alpha, \beta)} x^{\alpha-1} (1-x)^{\beta - 1}$ for $0 < x < 1$.
 \end{defn}
+
+\begin{defn}
+    A random variable $X$ has the \textbf{Pareto distribution} with parameters $\alpha > 0$ and $\beta > 0$ if it has pdf \\
+    $f(x) = \begin{cases} \displaystyle \frac{\beta \alpha^\beta}{x^{\beta + 1}} & x \geq \alpha \\ 0 & x \leq \alpha \end{cases}$
+\end{defn}
+
+\begin{prop}
+    For Pareto's distribution with parameter $\alpha$ and $\beta$, the moment of order $n$ exists if and only if $n < \beta$. 
+\end{prop}
