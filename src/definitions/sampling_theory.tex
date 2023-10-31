@@ -188,3 +188,66 @@ The converse of this theorem is also true: if the sample mean and sample varianc
 \begin{defn}
     We say that a sequence of random variables $X_1, X_2, ...$ \textbf{converges in distribution} to a random variable $X$ (written $X_n \overset{d}{\to} X$) if $\lim_{n \to \infty} F_{X_n}(x) = F_X(x)$ at all points $x$ where $F_X(x)$ is continuous.
 \end{defn}
+
+\begin{note}
+    The convergence of distribution functions does not imply the convergence of corresponding PMFs or PDFs.
+\end{note}
+
+\begin{thm}
+    Assume that the random variables $X$ and $X_n$ (for each $n$) are non-negative and integer valued. Then $X_n \overset{d}{\to} X \iff \lim_{n \to \infty} f_{X_n} (k) = f_X(k)$ for all $k = 0, 1, 2, ...$
+\end{thm}
+
+\begin{thm}
+    Let $(X_n)$ and $X$ be random variables with pdf such that $f_{X_n}(x) \to f_X(x)$ for almost all $x \in \mathbb{R}$. 
+    Then $X_n \overset{d}{\to} X$.
+\end{thm}
+
+\begin{note}
+    Convergence in distribution does not have the usual properties associated with convergence. For example, unless $X_n$ and $Y_n$ are independent, then in general $X_n \overset{d}{\to} X$ and $Y_n \overset{d}{\to} Y$ does not imply that $X_n + Y_n \overset{d}{\to} X + Y$
+\end{note}
+
+\begin{thm}
+    If $X_n \overset{d}{\to} X$ and $Y_n \overset{d}{\to} a$ where $a$ is a constant, then $X_n + Y_n \overset{d}{\to} X + a$ and $X_n Y_n \overset{d}{\to} aX$
+\end{thm}
+
+\begin{thm}
+    If the sequence of random variables $X_1, X_2, ...$ converges in probability to a random variable $X$, then the sequence also converges in distribution to $X$.
+\end{thm}
+
+\begin{note}
+    The converse of the above theorem is not true.
+\end{note}
+
+\begin{thm}
+    Suppose $X_n \overset{d}{\to} a$ where $a$ is a constant. Then $X_n \overset{p}{\to} a$
+\end{thm}
+
+\begin{thm}[Central Limit Theorem]
+    Let $X_1, X_2, ...$ be a sequence of independent and identically distributed random variables, each having a finite mean $\mu$ and non-zero variance $\sigma^2$. 
+    \\Then $\frac{Z_n - n \mu}{\sigma \sqrt{n}} \overset{d}{\to} N(0,1)$ where $Z_n = X_1 + X_2 + ... + X_n$
+\end{thm}
+
+\begin{thm}[Continuity Theorem]
+    Let $(X_n)$ be a sequence of random variables with corresponding MGFs $(M_n)$ and suppose that $M_n(t)$ exists for $|t| \leq t_0$ for every $n$. If there exists a random variable $X$ with corresponding MGF $M$ which exists for $|t| \leq t_1 \leq t_0$ such that $M_n(t) \to M(t)$ as $n \to \infty$ for every $t \in [-t_1, t_1]$ then $X_n \overset{d}{\to} X$.
+\end{thm}
+
+\begin{defn}
+    Let $(X_n)$ be a sequence of random variables. We say that $X_n$ is \textbf{asymptotically normal} with mean $\mu$ and variance $\sigma_n^2$ and we write $X_n$ is $AN(\mu_n, \sigma_n^2)$ if $\sigma_n > 0$ and $\frac{X_n - \mu}{\sigma_n} \overset{d}{\to} N(0,1)$ as $n \to \infty$.
+\end{defn}
+
+\begin{note}
+    Here $\mu_n$ is not necessarily the mean of $X_n$ and $\sigma_n^2$  is not necessarily its variance.
+\end{note}
+
+\begin{thm}[Delta Method]
+    Suppose $Y_n$ is $AN(\mu, \sigma^2)$ with $\sigma_n \to 0$ and $\mu$ a fixed real number. 
+    Let $g$ be a real-valued function which is differentiable at $x = \mu$, with $g'(\mu) \neq 0$. 
+    Then $g(Y_n)$ is $AN(g(\mu), [g'(\mu)]^2 \sigma_n^2)$
+\end{thm}
+
+\begin{thm}[$k$-th order Delta Method]
+    Suppose $Y_n$ is $AN(\mu, \sigma^2)$ with $\sigma_n \to 0$ and $\mu$ a fixed real number. 
+    Let $g$ be a real valued function which is differentiable $k$ times, $k \geq 1$ at $x = \mu$ with $g^{(i)}(\mu) = 0$ for $1 \leq i \leq k - 1$, $g^{(k)}(\mu) \neq 0$. Then $\frac{g(Y_n) - g(\mu)}{\frac{1}{k!} g^{(k)}(\mu) \sigma_n^k} \overset{d}{\to} Z^k$ where $Z \sim N(0,1)$
+\end{thm}
+
+\hhrule

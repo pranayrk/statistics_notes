@@ -7,6 +7,7 @@
 \usepackage{lipsum}
 \usepackage{thmtools}
 \usepackage{enumitem}
+\usepackage{bm}
 \usepackage[margin=0.75in]{geometry}
 
 \tolerance=1
@@ -22,12 +23,11 @@
 \newtheoremstyle{dotless}{}{}{}{}{\bfseries}{}{\newline}{}
 \theoremstyle{dotless}
 \newtheorem*{defn}{Definition}
-\newtheorem*{thm}{Theorem}
-\newtheorem*{note}{Note}
-\newtheorem*{lemma}{Lemma}
-\newtheorem*{result}{Result}
-\newtheorem*{remark}{Remark}
-\newtheorem*{prop}{Proposition}
+\newtheorem*{thm}{Theorem} % Anything that needs to be proved
+\newtheorem*{note}{Note} % Anything from the source that provides extra information
+\newtheorem*{remark}{Remark} % Comments by self
+\newtheorem*{lemma}{Lemma} % Anything that does not need to be proved
+\newtheorem*{prop}{Proposition} % Anything that comes from another subject and does not need to be proved
 
 \everymath{\displaystyle}
 
@@ -79,6 +79,36 @@
     \end{itemize}
 \end{prop}
 
+\begin{prop}
+    Let $(a_n)$ be a sequence of real numbers such that $a_n \to a$. Then $\lim_{n \to \infty} \left( 1 + \frac{a_n}{n} \right)^n = e^a$ 
+\end{prop}
+
+\begin{defn}
+    The \textbf{indicator function} of the set $A$ is defined as $I_A (x) = \begin{cases} 1 & \text{ if } x \in A \\ 0 & \text{otherwise} \end{cases}$
+
+\end{defn}
+
+\begin{defn}
+    If $f(t)$ is a function defined for all $t \geq 0$, its Laplace transform is defined as $F(s) = \int_0^\infty e^{-st} f(t) dt$ where $s$ is a real number
+\end{defn}
+
+\begin{note}
+    Laplace transform $F(s)$ may not exist for all real number $s$.
+\end{note}
+
+\begin{thm}
+    If $f(t)$ is defined and piecewise continuous on every finite subinterval of $(0, \infty)$ and satisfies the following growth restriction $|f(t)| \leq M e^{ct}$ for all $t \geq 0$ and some constants $M > 0$ and $c \in \mathbb{R}$, the Laplace transform $F(s)$ exists for all $s \geq c$.
+\end{thm}
+
+\begin{thm}
+    If the Laplace transform of a given function exists, it is uniquely determined.
+    
+    Conversely, if two functions have the same transform, these functions cannot differ over an interval of positive length.
+
+    If two continuous functions have the same transform, they are completely identical.
+\end{thm}
+
+\hhrule
 \section*{Fundamentals}
 
 \begin{defn}
@@ -113,6 +143,7 @@
         Then the joint pdf is $k(z,w) = \displaystyle \sum_i \frac{1}{|J(x_i, y_i)|} f(x_i, y_i)$
 \end{prop}
 
+\hhrule
 \subsection*{Expectation, Variance and Moments}
 
 \begin{defn}
@@ -217,6 +248,7 @@ The $r$-th derivative of the moment generating funtion is the $r$-th moment abou
 \end{thm}
 
 
+\hhrule
 \subsection*{Distributions}
 
 \begin{defn}
@@ -371,6 +403,12 @@ Let $X \sim N(0,1)$. Then $X^2 \sim \chi_1^2$
 \begin{prop}
     For Pareto's distribution with parameter $\alpha$ and $\beta$, the moment of order $n$ exists if and only if $n < \beta$. 
 \end{prop}
+
+\begin{defn}
+    The \textbf{Weibull Distribution} (Weibull$(\gamma, \beta)$) has pdf with parameters $\gamma > 0$, $\beta > 0$ defined as  $f(x) = \frac{\gamma}{\beta} x^{\gamma - 1} \exp(- \frac{x^\gamma}{\beta})$ where $x \geq 0$.
+\end{defn}
+
+\hhrule
 
 \section*{Sampling Theory}
 We can either sample \textit{with replacement} or \textit{without replacement}. A finite population sampled with replacement can be considered infinite. Sampling from a very large finite population can similarly be considered as sampling from an infinite population. 
@@ -562,6 +600,153 @@ The converse of this theorem is also true: if the sample mean and sample varianc
 \begin{defn}
     We say that a sequence of random variables $X_1, X_2, ...$ \textbf{converges in distribution} to a random variable $X$ (written $X_n \overset{d}{\to} X$) if $\lim_{n \to \infty} F_{X_n}(x) = F_X(x)$ at all points $x$ where $F_X(x)$ is continuous.
 \end{defn}
+
+\begin{note}
+    The convergence of distribution functions does not imply the convergence of corresponding PMFs or PDFs.
+\end{note}
+
+\begin{thm}
+    Assume that the random variables $X$ and $X_n$ (for each $n$) are non-negative and integer valued. Then $X_n \overset{d}{\to} X \iff \lim_{n \to \infty} f_{X_n} (k) = f_X(k)$ for all $k = 0, 1, 2, ...$
+\end{thm}
+
+\begin{thm}
+    Let $(X_n)$ and $X$ be random variables with pdf such that $f_{X_n}(x) \to f_X(x)$ for almost all $x \in \mathbb{R}$. 
+    Then $X_n \overset{d}{\to} X$.
+\end{thm}
+
+\begin{note}
+    Convergence in distribution does not have the usual properties associated with convergence. For example, unless $X_n$ and $Y_n$ are independent, then in general $X_n \overset{d}{\to} X$ and $Y_n \overset{d}{\to} Y$ does not imply that $X_n + Y_n \overset{d}{\to} X + Y$
+\end{note}
+
+\begin{thm}
+    If $X_n \overset{d}{\to} X$ and $Y_n \overset{d}{\to} a$ where $a$ is a constant, then $X_n + Y_n \overset{d}{\to} X + a$ and $X_n Y_n \overset{d}{\to} aX$
+\end{thm}
+
+\begin{thm}
+    If the sequence of random variables $X_1, X_2, ...$ converges in probability to a random variable $X$, then the sequence also converges in distribution to $X$.
+\end{thm}
+
+\begin{note}
+    The converse of the above theorem is not true.
+\end{note}
+
+\begin{thm}
+    Suppose $X_n \overset{d}{\to} a$ where $a$ is a constant. Then $X_n \overset{p}{\to} a$
+\end{thm}
+
+\begin{thm}[Central Limit Theorem]
+    Let $X_1, X_2, ...$ be a sequence of independent and identically distributed random variables, each having a finite mean $\mu$ and non-zero variance $\sigma^2$. 
+    \\Then $\frac{Z_n - n \mu}{\sigma \sqrt{n}} \overset{d}{\to} N(0,1)$ where $Z_n = X_1 + X_2 + ... + X_n$
+\end{thm}
+
+\begin{thm}[Continuity Theorem]
+    Let $(X_n)$ be a sequence of random variables with corresponding MGFs $(M_n)$ and suppose that $M_n(t)$ exists for $|t| \leq t_0$ for every $n$. If there exists a random variable $X$ with corresponding MGF $M$ which exists for $|t| \leq t_1 \leq t_0$ such that $M_n(t) \to M(t)$ as $n \to \infty$ for every $t \in [-t_1, t_1]$ then $X_n \overset{d}{\to} X$.
+\end{thm}
+
+\begin{defn}
+    Let $(X_n)$ be a sequence of random variables. We say that $X_n$ is \textbf{asymptotically normal} with mean $\mu$ and variance $\sigma_n^2$ and we write $X_n$ is $AN(\mu_n, \sigma_n^2)$ if $\sigma_n > 0$ and $\frac{X_n - \mu}{\sigma_n} \overset{d}{\to} N(0,1)$ as $n \to \infty$.
+\end{defn}
+
+\begin{note}
+    Here $\mu_n$ is not necessarily the mean of $X_n$ and $\sigma_n^2$  is not necessarily its variance.
+\end{note}
+
+\begin{thm}[Delta Method]
+    Suppose $Y_n$ is $AN(\mu, \sigma^2)$ with $\sigma_n \to 0$ and $\mu$ a fixed real number. 
+    Let $g$ be a real-valued function which is differentiable at $x = \mu$, with $g'(\mu) \neq 0$. 
+    Then $g(Y_n)$ is $AN(g(\mu), [g'(\mu)]^2 \sigma_n^2)$
+\end{thm}
+
+\begin{thm}[$k$-th order Delta Method]
+    Suppose $Y_n$ is $AN(\mu, \sigma^2)$ with $\sigma_n \to 0$ and $\mu$ a fixed real number. 
+    Let $g$ be a real valued function which is differentiable $k$ times, $k \geq 1$ at $x = \mu$ with $g^{(i)}(\mu) = 0$ for $1 \leq i \leq k - 1$, $g^{(k)}(\mu) \neq 0$. Then $\frac{g(Y_n) - g(\mu)}{\frac{1}{k!} g^{(k)}(\mu) \sigma_n^k} \overset{d}{\to} Z^k$ where $Z \sim N(0,1)$
+\end{thm}
+
+\hhrule
+
+\section*{Principles of Data Reduction}
+
+\begin{defn}
+    Let $\bm{X} = (X_1, X_2, ..., X_n)$ be a random sample from a population with unknown parameter $\theta$. A statistic $T = T(\bm{X})$ is a \textbf{sufficient statistic} for $\theta$ if the conditional distribution of the sample $\bm{X}$ given $T = t$ does not depend on $\theta$, i.e. $P(\bm{X}=(x_1, x_2, ..., x_n) | T = t)$ does not depend on $\theta$
+\end{defn}
+
+\begin{remark}
+    Sufficient if probability of sample vector given the statistic does not depend on the parameter
+\end{remark}
+
+\begin{thm}
+    Let $f(\bm{x}|\theta)$ denote the joint pdf or pmf of a sample $\bm{X}$ and $q(t|\theta)$ is the pdf or pmf of a statistic $T(\bm{X})$. 
+    Then $T(\bm{X})$ is a sufficient statistic for $\theta$ if for every $\bm{x}$ in the sample space, the ratio $\frac{f(\bm{x}|\theta)}{q(T(\bm{x})|\theta)}$ does not depend on $\theta$.
+\end{thm}
+
+\begin{remark}
+    Sufficient if joint pmf/pdf of sample vector divided by pmf/pdf of statistic does not depend on parameter.
+\end{remark}
+
+\begin{thm}[Factorization Theorem]
+    Let $f(\bm{x}|\theta)$ denote the joint pdf or pmf of a sample $\bm{X}$. A statistic $T(\bm{X})$ is a sufficient statistic for $\theta$ if and only if there exist functions $g(t|\theta)$ and $h(\bm{X})$ such that for all sample point $\bm{x}$ and all parameter points $\theta$, $f(\bm{x}|\theta) = g(T(\bm{x})|\theta) h(\bm{x})$
+\end{thm}
+
+\begin{remark}
+    Sufficient iff the joint pdf of the sample vector can be factorized into a function of the statistic (which depends on the parameter) and a function independent of the parameter. Not the function of the statistic need not be the pdf/pmf of the statistic
+\end{remark}
+
+\begin{note}
+    The above theorem helps us construct sufficient statistics instead of guessing at them.
+\end{note}
+
+\begin{note}
+    It is always true that the entire sample is a sufficient statistics since $T(x)=x$ and $h(x) = 1$ satisfies the above theorem. But this does not help with data reduction.
+\end{note}
+
+\begin{note}
+    For samples from a normal distribution with parameters $\mu$ and $\sigma^2$, $T(\bm{X}) = (\overline{X}, S^2)$ is a sufficient statistic for $(\mu, \sigma^2)$.
+Note for other distributions, the sample mean and variance may not be sufficient.
+\end{note}
+
+\begin{note}
+    If $T$ is sufficient for $\theta$, then any one-one function of $T$ is also sufficient.
+\end{note}
+
+\begin{defn}
+    Let $\{ f(t|\theta), \theta \in \Theta \}$ ($\theta$ may be a vector) be a family of pdfs or pmfs for a statistic $T = T(\bm{X})$ (here $T$ may be multidimensional). We say that this family is \textbf{complete} if given any real-valued function $g$ with $E_\theta g(T) = 0$ for all $\theta \in \Theta$ then \\$P_\theta(g(T) = 0) = 1$ for all $\theta \in \Theta$.
+\end{defn}
+
+\begin{note}
+    If a statistic $T = T(X)$ is sufficient for the family of pdfs or pmfs $\{ f(x|\theta) | \theta \in \Theta \}$ then $T$ is sufficient for any subclass of $\{ f(x|\theta) | \theta \in \Theta \}$. 
+
+    This does not hold for completeness, if even one member is removed from the family, it destroys completeness.
+\end{note}
+
+\begin{defn}
+    We say that $\{ f(x|\theta) | \theta \in \Theta \}$ is a \textbf{one-parameter exponential family} if $f(x|\theta)$ can be expressed as $f(x|\theta) = c(\theta) h(x) e^{w(\theta) t(x)}$ where $h(x) \geq 0$ and $t(x)$ are real valued functions of the observation $x$  (cannot depend on $\theta$), $c(\theta) \geq 0$ and $w(\theta)$ are real valued functions of the unknown parameter $\theta$ (cannot depend on $x$). 
+\end{defn}
+
+\begin{defn}
+    The form in the above definition is not unique.
+\end{defn}
+
+\begin{defn}
+    We say that $\{ f(x|\bm{\theta}) | \bm{\theta} \in \Theta \}$ is a \textbf{$\bm{k}$-parameter exponential family} if $f(x|\bm{\theta})$ can be expressed as $f(x|\bm{\theta}) = c(\bm{\theta}) h(x) e^{\sum_{i=1}^k w_i(\theta) t_i(x)}$ where $h(x) \geq 0$ and $t_i (x) , i = 1,2, ..., k$ are real-valued functions of the observation $x$ (cannot depend on $\bm{\theta} = (\theta_1, ..., \theta_k)$, $c(\bm{\theta}) \geq 0$ and $w_i(\bm{\theta}), i= 1,2, ..., k$ are real-valued functions of the unknown $k$-dimensional parameter $\bm{\theta}$ (cannot depend on $x$)
+\end{defn}
+
+\begin{defn}
+    We say that $\{ f(x|\bm{\theta}) | \bm{\theta} \in \Theta \}$ is a \textbf{curved exponential family} if $f(x|\bm{\theta})$ can be expressed in the form $f(x|\bm{\theta}) = c(\bm{\theta}) h(x) e^{\sum_{i=1}^k w_i(\theta) t_i(x)}$ for which the dimension of the vector $\bm{\theta}$ is equal to $d < k$
+\end{defn}
+
+\begin{thm}
+    Let $X_1, X_2, ...,  X_n$ be iid observations from a pdf or pmf $f(x|\bm{\theta})$ that belongs to an exponential family given by $f(x|\bm{\theta}) = c(\bm{\theta}) h(x) e^{\sum_{i=1}^k w_i(\bm{\theta}) t_i(x)}$ where $\bm{\theta} = (\theta_1, \theta_2, ..., \theta_d)$ where $d \leq k$. Then $T(\bm{X}) = \left (  \sum_{j=1}^n t_1(X_j), ..., \sum_{j=1}^n t_k(X_j) \right )$ is a sufficient statistic for $\bm{\theta}$
+\end{thm}
+
+
+\begin{thm}
+    Let $X_1, X_2, ..., X_n$ be iid observations from a pdf or pmf $f(x|\bm{\theta})$ that belongs to a $k$-parameter exponential family given by $f(x|\bm{\theta}) = c(\bm{\theta}) h(x) e^{\sum_{i=1}^k w_i(\bm{\theta}) t_i(x)}$  where $\bm{\theta} = (\theta_1, \theta_2, ..., \theta_k)$. Then the statistic $T(\bm{X}) = \left ( \sum_{j=1}^n t_1(X_j), ..., \sum_{j=1}^n t_k(X_j) \right )$ is complete for $\bm{\theta}$
+\end{thm}
+
+\begin{note}
+    In the above theorems, curved exponential families are allowed in the sufficient statistic theorem, but only fully exponential families are allowed in the complete statistic theorem.
+\end{note}
+
 
 \end{document}
 

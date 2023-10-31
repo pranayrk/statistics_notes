@@ -38,6 +38,36 @@
     \end{itemize}
 \end{prop}
 
+\begin{prop}
+    Let $(a_n)$ be a sequence of real numbers such that $a_n \to a$. Then $\lim_{n \to \infty} \left( 1 + \frac{a_n}{n} \right)^n = e^a$ 
+\end{prop}
+
+\begin{defn}
+    The \textbf{indicator function} of the set $A$ is defined as $I_A (x) = \begin{cases} 1 & \text{ if } x \in A \\ 0 & \text{otherwise} \end{cases}$
+
+\end{defn}
+
+\begin{defn}
+    If $f(t)$ is a function defined for all $t \geq 0$, its Laplace transform is defined as $F(s) = \int_0^\infty e^{-st} f(t) dt$ where $s$ is a real number
+\end{defn}
+
+\begin{note}
+    Laplace transform $F(s)$ may not exist for all real number $s$.
+\end{note}
+
+\begin{thm}
+    If $f(t)$ is defined and piecewise continuous on every finite subinterval of $(0, \infty)$ and satisfies the following growth restriction $|f(t)| \leq M e^{ct}$ for all $t \geq 0$ and some constants $M > 0$ and $c \in \mathbb{R}$, the Laplace transform $F(s)$ exists for all $s \geq c$.
+\end{thm}
+
+\begin{thm}
+    If the Laplace transform of a given function exists, it is uniquely determined.
+    
+    Conversely, if two functions have the same transform, these functions cannot differ over an interval of positive length.
+
+    If two continuous functions have the same transform, they are completely identical.
+\end{thm}
+
+\hhrule
 \section*{Fundamentals}
 
 \begin{defn}
@@ -72,6 +102,7 @@
         Then the joint pdf is $k(z,w) = \displaystyle \sum_i \frac{1}{|J(x_i, y_i)|} f(x_i, y_i)$
 \end{prop}
 
+\hhrule
 \subsection*{Expectation, Variance and Moments}
 
 \begin{defn}
@@ -176,6 +207,7 @@ The $r$-th derivative of the moment generating funtion is the $r$-th moment abou
 \end{thm}
 
 
+\hhrule
 \subsection*{Distributions}
 
 \begin{defn}
@@ -330,3 +362,9 @@ Let $X \sim N(0,1)$. Then $X^2 \sim \chi_1^2$
 \begin{prop}
     For Pareto's distribution with parameter $\alpha$ and $\beta$, the moment of order $n$ exists if and only if $n < \beta$. 
 \end{prop}
+
+\begin{defn}
+    The \textbf{Weibull Distribution} (Weibull$(\gamma, \beta)$) has pdf with parameters $\gamma > 0$, $\beta > 0$ defined as  $f(x) = \frac{\gamma}{\beta} x^{\gamma - 1} \exp(- \frac{x^\gamma}{\beta})$ where $x \geq 0$.
+\end{defn}
+
+\hhrule

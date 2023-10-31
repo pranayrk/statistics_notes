@@ -2,3 +2,4 @@ map:
   - definitions.tex
   - fundamentals.tex
   - sampling_theory.tex
+  - data_reduction.tex

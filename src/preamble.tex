@@ -7,6 +7,7 @@
 \usepackage{lipsum}
 \usepackage{thmtools}
 \usepackage{enumitem}
+\usepackage{bm}
 \usepackage[margin=0.75in]{geometry}
 
 \tolerance=1
@@ -22,12 +23,11 @@
 \newtheoremstyle{dotless}{}{}{}{}{\bfseries}{}{\newline}{}
 \theoremstyle{dotless}
 \newtheorem*{defn}{Definition}
-\newtheorem*{thm}{Theorem}
-\newtheorem*{note}{Note}
-\newtheorem*{lemma}{Lemma}
-\newtheorem*{result}{Result}
-\newtheorem*{remark}{Remark}
-\newtheorem*{prop}{Proposition}
+\newtheorem*{thm}{Theorem} % Anything that needs to be proved
+\newtheorem*{note}{Note} % Anything from the source that provides extra information
+\newtheorem*{remark}{Remark} % Comments by self
+\newtheorem*{lemma}{Lemma} % Anything that does not need to be proved
+\newtheorem*{prop}{Proposition} % Anything that comes from another subject and does not need to be proved
 
 \everymath{\displaystyle}
 
