@@ -1,0 +1,89 @@
+\section*{Principles of Data Reduction}
+
+\begin{defn}
+    Let $\bm{X} = (X_1, X_2, ..., X_n)$ be a random sample from a population with unknown parameter $\theta$. A statistic $T = T(\bm{X})$ is a \textbf{sufficient statistic} for $\theta$ if the conditional distribution of the sample $\bm{X}$ given $T = t$ does not depend on $\theta$, i.e. $P(\bm{X}=(x_1, x_2, ..., x_n) | T = t)$ does not depend on $\theta$
+\end{defn}
+
+\begin{remark}
+    Sufficient if probability of sample vector given the statistic does not depend on the parameter
+\end{remark}
+
+\begin{thm}
+    Let $f(\bm{x}|\theta)$ denote the joint pdf or pmf of a sample $\bm{X}$ and $q(t|\theta)$ is the pdf or pmf of a statistic $T(\bm{X})$. 
+    Then $T(\bm{X})$ is a sufficient statistic for $\theta$ if for every $\bm{x}$ in the sample space, the ratio $\frac{f(\bm{x}|\theta)}{q(T(\bm{x})|\theta)}$ does not depend on $\theta$.
+\end{thm}
+
+\begin{remark}
+    Sufficient if joint pmf/pdf of sample vector divided by pmf/pdf of statistic does not depend on parameter.
+\end{remark}
+
+\begin{thm}[Factorization Theorem]
+    Let $f(\bm{x}|\theta)$ denote the joint pdf or pmf of a sample $\bm{X}$. A statistic $T(\bm{X})$ is a sufficient statistic for $\theta$ if and only if there exist functions $g(t|\theta)$ and $h(\bm{X})$ such that for all sample point $\bm{x}$ and all parameter points $\theta$, $f(\bm{x}|\theta) = g(T(\bm{x})|\theta) h(\bm{x})$
+\end{thm}
+
+\begin{remark}
+    Sufficient iff the joint pdf of the sample vector can be factorized into a function of the statistic (which depends on the parameter) and a function independent of the parameter. The function of the statistic does not need to be the pdf/pmf of the statistic
+\end{remark}
+
+\begin{note}
+    The above theorem helps us construct sufficient statistics instead of guessing at them.
+\end{note}
+
+\begin{note}
+    It is always true that the entire sample is a sufficient statistics since $T(x)=x$ and $h(x) = 1$ satisfies the above theorem. But this does not help with data reduction.
+\end{note}
+
+\begin{note}
+    For samples from a normal distribution with parameters $\mu$ and $\sigma^2$, $T(\bm{X}) = (\overline{X}, S^2)$ is a sufficient statistic for $(\mu, \sigma^2)$.
+Note for other distributions, the sample mean and variance may not be sufficient.
+\end{note}
+
+\begin{note}
+    If $T$ is sufficient for $\theta$, then any one-one function of $T$ is also sufficient.
+\end{note}
+
+\begin{defn}
+    Let $\{ f(t|\theta), \theta \in \Theta \}$ ($\theta$ may be a vector) be a family of pdfs or pmfs for a statistic $T = T(\bm{X})$ (here $T$ may be multidimensional). We say that this family is \textbf{complete} if given any real-valued function $g$ with $E_\theta g(T) = 0$ for all $\theta \in \Theta$ then \\$P_\theta(g(T) = 0) = 1$ for all $\theta \in \Theta$.
+\end{defn}
+
+\begin{note}
+    If a statistic $T = T(X)$ is sufficient for the family of pdfs or pmfs $\{ f(x|\theta) | \theta \in \Theta \}$ then $T$ is sufficient for any subclass of $\{ f(x|\theta) | \theta \in \Theta \}$. 
+
+    This does not hold for completeness, if even one member is removed from the family, it destroys completeness.
+\end{note}
+
+\begin{thm}
+    If $T$ is complete, then any one-to-one mapping of $T$ is also complete.
+\end{thm}
+
+\begin{defn}
+    We say that $\{ f(x|\theta) | \theta \in \Theta \}$ is a \textbf{one-parameter exponential family} if $f(x|\theta)$ can be expressed as $f(x|\theta) = c(\theta) h(x) e^{w(\theta) t(x)}$ where $h(x) \geq 0$, $t(x)$ are real valued functions of the observation $x$ which cannot depend on $\theta$ and $c(\theta) \geq 0$, $w(\theta)$ are real valued functions of the unknown parameter $\theta$ which cannot depend on $x$. 
+\end{defn}
+
+\begin{defn}
+    The form in the above definition is not unique.
+\end{defn}
+
+\begin{defn}
+    We say that $\{ f(x|\bm{\theta}) | \bm{\theta} \in \Theta \}$ is a \textbf{$\bm{k}$-parameter exponential family} if $f(x|\bm{\theta})$ can be expressed as $f(x|\bm{\theta}) = c(\bm{\theta}) h(x) e^{\sum_{i=1}^k w_i(\bm{\theta}) t_i(x)}$ where $h(x) \geq 0$, $t_i (x)$ are real-valued functions of the observation $x$ which cannot depend on $\bm{\theta} = (\theta_1, ..., \theta_k)$ and $c(\bm{\theta}) \geq 0$, $w_i(\bm{\theta})$ are real-valued functions of the unknown $k$-dimensional parameter $\bm{\theta}$ which cannot depend on $x$
+\end{defn}
+
+\begin{defn}
+    We say that $\{ f(x|\bm{\theta}) | \bm{\theta} \in \Theta \}$ is a \textbf{curved exponential family} if $f(x|\bm{\theta})$ can be expressed in the form $f(x|\bm{\theta}) = c(\bm{\theta}) h(x) e^{\sum_{i=1}^k w_i(\bm{\theta}) t_i(x)}$ for which the dimension of the vector $\bm{\theta}$ is equal to $d < k$
+\end{defn}
+
+\begin{thm}
+    Let $X_1, X_2, ...,  X_n$ be iid observations from a pdf or pmf $f(x|\bm{\theta})$ that belongs to an exponential family given by $f(x|\bm{\theta}) = c(\bm{\theta}) h(x) e^{\sum_{i=1}^k w_i(\bm{\theta}) t_i(x)}$ where $\bm{\theta} = (\theta_1, \theta_2, ..., \theta_d)$ where $d \leq k$. Then $T(\bm{X}) = \left (  \sum_{j=1}^n t_1(X_j), ..., \sum_{j=1}^n t_k(X_j) \right )$ is a sufficient statistic for $\bm{\theta}$
+\end{thm}
+
+
+\begin{thm}
+    Let $X_1, X_2, ..., X_n$ be iid observations from a pdf or pmf $f(x|\bm{\theta})$ that belongs to a $k$-parameter exponential family given by $f(x|\bm{\theta}) = c(\bm{\theta}) h(x) e^{\sum_{i=1}^k w_i(\bm{\theta}) t_i(x)}$  where $\bm{\theta} = (\theta_1, \theta_2, ..., \theta_k)$. Then the statistic $T(\bm{X}) = \left ( \sum_{j=1}^n t_1(X_j), ..., \sum_{j=1}^n t_k(X_j) \right )$ is complete for $\bm{\theta}$
+\end{thm}
+
+\begin{note}
+    In the above theorems, curved exponential families are allowed in the sufficient statistic theorem, but only fully exponential families are allowed in the complete statistic theorem.
+\end{note}
+
+
+\hhrule

@@ -1,12 +1,8 @@
 \documentclass[14pt,twoside]{extreport}
 \usepackage[utf8]{inputenc}
+\usepackage{stix}
 \usepackage{amsmath,amsfonts,graphicx,amsthm}
 \usepackage{epsfig,amssymb}
-\usepackage{caption}
-\usepackage{fancyhdr}
-\usepackage{lipsum}
-\usepackage{thmtools}
-\usepackage{enumitem}
 \usepackage{bm}
 \usepackage[margin=0.75in]{geometry}
 
@@ -16,6 +12,7 @@
 \hbadness=10000
 \widowpenalties 1 10000
 \raggedbottom
+\raggedright
 \setlength{\parindent}{0pt}
 \renewcommand{\chaptername}{}
 \newcommand{\hhrule}{\vspace{1cm}\hrule\vspace{1cm}}
@@ -26,8 +23,9 @@
 \newtheorem*{thm}{Theorem} % Anything that needs to be proved
 \newtheorem*{note}{Note} % Anything from the source that provides extra information
 \newtheorem*{remark}{Remark} % Comments by self
-\newtheorem*{lemma}{Lemma} % Anything that does not need to be proved
+\newtheorem*{lemma}{Lemma} % Any theorem that does not need to be proved
 \newtheorem*{prop}{Proposition} % Anything that comes from another subject and does not need to be proved
+\newtheorem*{result}{Result} % Anything from the source that is not a theorem or lemma
 
 \everymath{\displaystyle}
 

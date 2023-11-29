@@ -1,0 +1,75 @@
+\section*{Point Estimation}
+
+\begin{defn}
+A \textbf{point estimator} is any function $W(X_1, ..., X_n)$ of a sample, i.e. a statistic is a point estimator.
+\end{defn}
+
+\begin{note}
+    An estimator is a function of the sample, while an estimate is the realised value of an estimator that is obtained when the sample is taken.
+\end{note}
+
+\begin{remark}
+    A statistic is not an estimator. An estimator is a statistic with the added intention of measuring some property of the underlying distribution. 
+    Any real valued function of an observable random variable in a sample is called a statistic. 
+    Some statistics work well to estimate a property of a distribution.
+
+    The goal of a statistic is to summarize the information in a sample, by using sufficient statistics, and the goal of estimators is to estimate the parameters of the population under consideration.
+\end{remark}
+
+\begin{result}
+    Let $X_1, X_2, ..., X_n$ be a random sample from a population with probability function $f(x|\theta_1, ..., \theta_k)$.
+    Method of moments estimators are found by equating first $k$ sample moments to the corresponding $k$ population moments, and solving the resulting system of simultaneous equations.
+
+
+\end{result}
+
+\begin{note}
+    The method of moments is the oldest method of finding point estimators, dating back at least to Karl Pearson in the late 1800s. 
+    It is simple to use and almost always yields some sort of estimate. This method usually yields estimators that may be improved upon.
+\end{note}
+
+\begin{note}
+    The method of moments estimators need not be unbiased.
+\end{note}
+
+\begin{defn}
+    Let $X_1, X_2, ..., X_n$ be a random sample from a population with probability function $f(x|\theta)$.
+    The \textbf{likelihood function} is defined by $L(\theta|x_1, x_2, ..., x_n) = f(x_1|\theta) f(x_2|\theta) ... f(x_n|\theta)$ where $x_1, x_2, ..., x_n$ is the realized value of the random sample $X_1, X_2, ..., X_n$.
+\end{defn}
+
+\begin{note}
+    The domain of the likelihood function is the set of all permissible values of the population parameter.
+\end{note}
+
+\begin{defn}
+    For each sample point $\bm{x} = (x_1, x_2, ..., x_n)$, let $\hat{\theta}(\bm{x})$ be a parameter value at which $L(\theta|\bm{x})$ attains its maximum as a function of $\theta$, with $\bm{x}$ held fixed. Then $\hat{\theta}(\bm{X})$ is a \textbf{maximum likelihood estimator} of the parameter $\theta$ based on a random sample $\bm{X} = (X_1, X_2, ..., X_n)$.
+\end{defn}
+
+\begin{note}
+    The MLE is the parameter point for which the observed sample is most likely.
+\end{note}
+
+\begin{thm}[Invariance Property of MLEs]
+    If $\hat{\theta}$ is the MLE of $\theta$, then for any function $\tau(\theta)$, the MLE of $\tau(\theta)$ is $\tau(\hat{\theta})$.
+\end{thm}
+
+\begin{note}
+    The above property also holds in the multivariate case.
+\end{note}
+
+\begin{thm}[Bayes' Theorem]
+    Let $\{ A_1, A_2, ..., A_N \}$ be a partition of the sample space and assume that $P(A_i) > 0$ for all $i = 1,2, ..., N$. 
+
+    For any event $B$ such that $P(B) > 0$ we have $P(A_i | B) = \frac{P(B|A_i)P(A_i)}{\sum_{k=1}^N P(A_k) P(B|A_k)}$ for each $i = 1, 2, ..., N$
+
+
+    Alternatively, $f_{X|Y}(x|y) = \frac{f_{Y|X}(y|x) f_X(x)}{f_Y(y)} = \frac{f_{Y|X} (y|x) f_X(x)}{\int_{-\infty}^{\infty} f_{Y|X} (y|t) f_X(t) dt }$
+\end{thm}
+
+\begin{defn}
+    In Bayesian analysis, before the data is observed, the unknown parameter is modelled as a random variable $\Theta$ having probability distribution $\pi(\theta)$ called the \textbf{prior distribution}. This distribution represents our prior belief about the value of this parameter. We update the prior distribution after observing the sample to get the \textbf{posterior distribution} $\pi(\theta|\bm{x})$.
+\end{defn}
+
+\begin{defn}
+    Let $\mathcal{F}$ denote the class of probability functions $f(x|\theta)$ (indexed by $\theta$). A class $\Pi$ of prior distributions is a conjugate family for $\mathcal{F}$ if the posterior distribution is in the class $\Pi$ for all $f \in \mathcal{F}$.
+\end{defn}

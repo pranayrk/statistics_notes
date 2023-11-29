@@ -4,7 +4,7 @@
     $\Gamma(\alpha)$ denotes the gamma function which is defined as $\Gamma(\alpha) = \displaystyle\int_0^\infty t ^{\alpha - 1} e ^{-t} \mathop{\mathrm{d} t}$, where $\alpha > 0$. It is a commonly used extension of the factorial function.
 \end{defn}
 
-\begin{thm}
+\begin{prop}
     The Gamma function has the following properties:
     \begin{enumerate}
         \item The improper integral converges for all $\alpha > 0$.
@@ -14,7 +14,7 @@
         \item For $n \in \mathbb{N}$, $\Gamma(n) = (n-1)!$
         \item $\Gamma(\frac{1}{2}) = \sqrt{\pi}$
     \end{enumerate}
-\end{thm}
+\end{prop}
 
 \begin{defn}
     For $\alpha > 0, \beta > 0$, the beta function is defined as $B(\alpha, \beta) = \displaystyle\int_0^1 x^{\alpha -1} (1-x)^{\beta - 1} dx$.
@@ -44,7 +44,6 @@
 
 \begin{defn}
     The \textbf{indicator function} of the set $A$ is defined as $I_A (x) = \begin{cases} 1 & \text{ if } x \in A \\ 0 & \text{otherwise} \end{cases}$
-
 \end{defn}
 
 \begin{defn}
@@ -55,17 +54,27 @@
     Laplace transform $F(s)$ may not exist for all real number $s$.
 \end{note}
 
-\begin{thm}
+\begin{prop}
     If $f(t)$ is defined and piecewise continuous on every finite subinterval of $(0, \infty)$ and satisfies the following growth restriction $|f(t)| \leq M e^{ct}$ for all $t \geq 0$ and some constants $M > 0$ and $c \in \mathbb{R}$, the Laplace transform $F(s)$ exists for all $s \geq c$.
-\end{thm}
+\end{prop}
 
-\begin{thm}
+\begin{prop}
     If the Laplace transform of a given function exists, it is uniquely determined.
     
     Conversely, if two functions have the same transform, these functions cannot differ over an interval of positive length.
 
     If two continuous functions have the same transform, they are completely identical.
-\end{thm}
+\end{prop}
+
+\begin{prop}
+    Suppose that $f(x,y)$ and its first and second partial derivatives are continuous throughout a disk centered at $(a,b)$ and that $f_x(a,b) = f_y(a,b) = 0$. Then:
+    \begin{enumerate}
+        \item $f$ has a local maximum at $(a,b)$ if $f_{xx} < 0$ and $f_{xx}f_{yy} - f_{xy}^2 > 0$ at $(a,b)$
+        \item $f$ has a local minimum at $(a,b)$ if $f_{xx} > 0$ and $f_{xx}f_{yy} - f_{xy}^2 > 0$ at $(a,b)$
+        \item $f$ has a saddle point at $(a,b)$ if $f_{xx}f_{yy} - f_{xy}^2 < 0$ at $(a,b)$
+    \end{enumerate}
+    The test is inconclusive if $f_{xx}f_{yy} - f_{xy}^2 = 0$ at $(a,b)$. In this case, we must find some other way to determine the behaviour of $f$ at $(a,b)$.
+\end{prop}
 
 \hhrule
 \section*{Fundamentals}
@@ -211,7 +220,7 @@ The $r$-th derivative of the moment generating funtion is the $r$-th moment abou
 \subsection*{Distributions}
 
 \begin{defn}
-    Let $p$ be the probability that an event will happen in any single Bernoulli trial (trial with outcomes either success or failure). The probability that an event will happen exactly $x$ times in $n$ trials is given by the \textbf{Binomial Random Variable} with pmf distribution $f(x) = {n \choose k} p^x (1-p)^{n-x} = \displaystyle \frac{n!}{x! (n-x)!} p^x (1-p)^{n-x}$, where $x = 0, 1, ... , n$.
+    Let $p$ be the probability that an event will happen in any single Bernoulli trial (trial with outcomes either success or failure). The probability that an event will happen exactly $x$ times in $n$ trials is given by the \textbf{Binomial Random Variable} with pmf distribution $f(x) = {n \choose x} p^x (1-p)^{n-x} = \displaystyle \frac{n!}{x! (n-x)!} p^x (1-p)^{n-x}$, where $x = 0, 1, ... , n$.
 \end{defn}
 
 \begin{prop}
@@ -351,7 +360,7 @@ Let $X \sim N(0,1)$. Then $X^2 \sim \chi_1^2$
 
 \begin{defn}
     A random variable $X \sim \text{beta}(\alpha, \beta)$ has the \textbf{beta distribution} if it has pdf \\
-    $ f(x) = \displaystyle \frac{1}{B(\alpha, \beta)} x^{\alpha-1} (1-x)^{\beta - 1}$ for $0 < x < 1$.
+    $ f(x) = \displaystyle \frac{1}{B(\alpha, \beta)} x^{\alpha-1} (1-x)^{\beta - 1}$ for $0 < x < 1$ and $\alpha, \beta > 0$.
 \end{defn}
 
 \begin{defn}

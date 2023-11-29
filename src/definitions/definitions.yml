@@ -3,3 +3,4 @@ map:
   - fundamentals.tex
   - sampling_theory.tex
   - data_reduction.tex
+  - point_estimation.tex
