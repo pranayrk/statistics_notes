@@ -1,6 +1,6 @@
 \documentclass[14pt,twoside]{extreport}
 \usepackage[utf8]{inputenc}
-\usepackage{stix}
+\usepackage{stix2}
 \usepackage{amsmath,amsfonts,graphicx,amsthm}
 \usepackage{epsfig,amssymb}
 \usepackage{bm}
@@ -252,6 +252,15 @@ The $r$-th derivative of the moment generating funtion is the $r$-th moment abou
 
 \begin{thm}
     $X$ and $Y$ are independent random variables if and only if $M(t_1, t_2) = M(t_1, 0) M(0, t_2)$ for all $t_1 \in [-h_1, h_1], t_2 \in [-h_2, h_2]$
+\end{thm}
+
+\begin{thm}[Bayes' Theorem]
+    Let $\{ A_1, A_2, ..., A_N \}$ be a partition of the sample space and assume that $P(A_i) > 0$ for all $i = 1,2, ..., N$.
+
+    For any event $B$ such that $P(B) > 0$ we have $P(A_i | B) = \frac{P(B|A_i)P(A_i)}{\sum_{k=1}^N P(A_k) P(B|A_k)}$ for each $i = 1, 2, ..., N$
+
+
+    Alternatively, $f_{X|Y}(x|y) = \frac{f_{Y|X}(y|x) f_X(x)}{f_Y(y)} = \frac{f_{Y|X} (y|x) f_X(x)}{\int_{-\infty}^{\infty} f_{Y|X} (y|t) f_X(t) dt }$
 \end{thm}
 
 
@@ -820,22 +829,122 @@ A \textbf{point estimator} is any function $W(X_1, ..., X_n)$ of a sample, i.e. 
     The above property also holds in the multivariate case.
 \end{note}
 
-\begin{thm}[Bayes' Theorem]
-    Let $\{ A_1, A_2, ..., A_N \}$ be a partition of the sample space and assume that $P(A_i) > 0$ for all $i = 1,2, ..., N$. 
+\begin{defn}
+    In Bayesian analysis, before the data is observed, the unknown parameter is modelled as a random variable $\Theta$ having probability distribution $\pi(\theta)$ called the \textbf{prior distribution}. This distribution represents our prior belief about the value of this parameter. We update the prior distribution after observing the sample to get the \textbf{posterior distribution} $\pi(\theta|\bm{x})$.
 
-    For any event $B$ such that $P(B) > 0$ we have $P(A_i | B) = \frac{P(B|A_i)P(A_i)}{\sum_{k=1}^N P(A_k) P(B|A_k)}$ for each $i = 1, 2, ..., N$
+    The posterior distribution $\pi(\theta|\bm{x})$ is defined as 
+    \\ $\pi(\theta|\bm{x}) = \frac{f(\bm{x}|\theta) \pi(\theta) }{m(\bm{x})}$ where $m(\bm{x})$ is the marginal distribution of $\bm{X}$, i.e. $m(\bm{x}) = \int f(\bm{x} | \theta) \pi(\theta) d\theta$
+\end{defn}
 
+\begin{defn}
+    Let $\mathcal{F}$ denote the class of probability functions $f(x|\theta)$ (indexed by $\theta$). A class $\Pi$ of prior distributions is a \textbf{conjugate family} for $\mathcal{F}$ if the posterior distribution is in the class $\Pi$ for all $f \in \mathcal{F}$.
+\end{defn}
 
-    Alternatively, $f_{X|Y}(x|y) = \frac{f_{Y|X}(y|x) f_X(x)}{f_Y(y)} = \frac{f_{Y|X} (y|x) f_X(x)}{\int_{-\infty}^{\infty} f_{Y|X} (y|t) f_X(t) dt }$
+\begin{note}
+    For any sampling distribution, conjugate families form a natural choice for the prior distribution.
+\end{note}
+
+\begin{note}
+    The beta family is conjugate to the binomial family.
+\end{note}
+
+\begin{defn}
+    The \textbf{mean square error} of an estimator $W$ of a parameter $\theta$ is the function of $\theta$ defined by $\text{MSE}(\theta) = E(W - \theta)^2$
+\end{defn}
+
+\begin{defn}
+    The \textbf{bias} of a point estimator $W$ of a parameter $\theta$ is defined as $\text{Bias}(W) = EW - \theta$. 
+    An estimator whose bias is identically equal to $0$ is called unbiased and satisfies $EW = \theta$ for all $\theta$.
+\end{defn}
+
+\begin{note}
+    $\text{MSE}(\theta) = \text{Var}(T) + (\text{Bias}(T))^2$
+\end{note}
+
+\begin{defn}
+    An estimator $W^*$ is a \textbf{best unbiased estimator} of $\tau(\theta)$ if it satisfies:
+    \begin{itemize}
+        \item $EW^* = \tau(\theta)$ for all $\theta$
+        \item for any other estimator $W$ with $EW = \tau(\theta)$, we have $\text{Var}(W^*) \leq \text{Var}(W)$ for all $\theta$.
+    \end{itemize}
+            $W^*$ is also called a \textbf{uniform minimum variance unbiased estimator} of $\tau(\theta)$.
+\end{defn}
+
+\begin{thm}
+    Let $X_1, X_2, ..., X_n$ be a random sample and $X_i$'s have a finite fourth moment.
+
+    Denote $\theta_1 = EX_i$, $\theta_j = E(X_i - \theta_1)^j$ for $j = 2, 3, 4$.
+    Then the variance of the sample variance $S^2$ is given by $\text{Var}S^2 = \frac{1}{n} \left ( \theta_4 - \frac{n - 3}{n-1} \theta_2^2 \right )$
+\end{thm}
+
+\begin{thm}[Cramer-Rao Inequality]
+    Let $X_1, X_2, ..., X_n$ be a sample with joint pdf $f(\bm{x} | \theta)$ and let $W(\bm{X}) = W(X_1, X_2, ..., X_n)$ be any estimator satisfying $\frac{d}{d\theta} EW(\bm{X}) = \frac{d}{d\theta} \int W(\bm{x}) f(x | \theta) d\bm{x} = \int_{\mathcal{X}} W(\bm{x}) \frac{\partial}{\partial \theta} d\bm{x}$ and $\text{Var}(\bm{X}) < \infty$.
+
+    Then $\text{Var}W(\bm{X}) \geq \frac{[\frac{d}{d\theta} EW(\bm{X})]^2}{E[\frac{\partial}{\partial \theta} \log f(\bm{X}|\theta)^2]}$, provided $0 <  E[\frac{\partial}{\partial \theta} \log f(\bm{X}|\theta)^2] < \infty$
+
+    In particular, if $X_1, X_2, ..., X_n$ are iid with pdf $f(x|\theta)$, then $\text{Var}W(\bm{X}) \geq \frac{[\frac{d}{d\theta} EW(\bm{X})]^2}{n E[\frac{\partial}{\partial \theta} \log f(X|\theta)^2]}$
+
+\end{thm}
+
+\begin{thm}
+    Let $X_1, X_2, ..., X_n$ be iid $f(x|\theta)$ where $f(x|\theta)$ satisfies the conditions of the Cramer-Rao theorem. Let $L(\theta|\bm{x}) = \pi_{i = 1}^n f(x_i|\theta)$ denote the likelihood function.
+
+    If $W(\bm{X}) = W(X_1,..., X_n)$ is any unbiased estimator of $\tau(\theta)$, then $W(\bm{X})$ attains the Cramer-Rao lower bound if and only if $a(\theta)[W(\bm{x} - \tau(\theta)] = \frac{\partial}{\partial \theta} \text{log}L(\theta|\bm{x})$ for some function $a(\theta)$.
 \end{thm}
 
 \begin{defn}
-    In Bayesian analysis, before the data is observed, the unknown parameter is modelled as a random variable $\Theta$ having probability distribution $\pi(\theta)$ called the \textbf{prior distribution}. This distribution represents our prior belief about the value of this parameter. We update the prior distribution after observing the sample to get the \textbf{posterior distribution} $\pi(\theta|\bm{x})$.
+    Let $X$ and $Y$ be discrete random variables with conditional pmf $f_{X|Y}$ of $X$ given $Y$. Then the \textbf{conditional expectation} of $X$ given $Y$ is defined as $E[X|Y=y] = \sum_{x} x f_{X|Y}(x|y)$
+
+    Let $X$ and $Y$ be continuous random variables with conditional pdf $f_{X|Y}$ of $X$ given $Y$. Then the \textbf{conditional expectation} of $X$ given $Y$ is defined as $E[X|Y=y] = \int_{-\infty}^\infty x f_{X|Y}(x|y)$
 \end{defn}
 
-\begin{defn}
-    Let $\mathcal{F}$ denote the class of probability functions $f(x|\theta)$ (indexed by $\theta$). A class $\Pi$ of prior distributions is a conjugate family for $\mathcal{F}$ if the posterior distribution is in the class $\Pi$ for all $f \in \mathcal{F}$.
-\end{defn}
+
+\begin{thm}
+    Let $X$ and $Y$ be random variables such that $X$ has finite mean. 
+    Let $E[X|Y]$ be a function of $Y$ that takes the value $E[X|Y=y]$ when $Y=y$.
+    Then $E[E[X|Y]] = E[X]$.
+\end{thm}
+
+\begin{note}[Properties of conditional expectation]
+    \begin{itemize}
+        \item[]
+        \item $\text{Var}X = \text{Var}[E(X|Y)] + E[\text{Var}(X|Y)]$
+        \item $E[\phi(X,Y)|Y=y] = E[\phi(X,y)|Y=y]$
+        \item $E[\psi(Y) \phi(X,Y)|Y] = \psi(Y) E[\phi(X,Y)|Y]$
+        \item $\text{Var}X \geq \text{Var}[E(X|Y)]$
+    \end{itemize}
+\end{note}
+
+\begin{thm}[Rao-Blackwell]
+    Let $W$ be any unbiased estimator of $\tau(\theta)$ and let $T$ be a sufficient statistic for $\theta$. 
+    Define $\phi(T) = E(W|T)$.
+
+    Then $E_\theta(\phi(T)) = \tau(\theta)$ and $\text{Var}_\theta \phi(T) \leq \text{Var}_\theta W$ for all $\theta$, i.e. $\phi(T)$ is a uniformly better unbiased estimator for $\tau(\theta)$.
+\end{thm}
+
+\begin{thm}
+    If $W$ is a best unbiased estimator of $\tau(\theta)$, then $W$ is unique.
+\end{thm}
+
+\begin{thm}
+    Suppose $E_\theta(W) = \tau(\theta)$. Then $W$ is the best unbiased estimator of $\tau(\theta)$ is and only if $W$ is uncorrelated with all unbiased estimators of $0$.
+\end{thm}
+
+\begin{thm}
+    Let $T$ be a complete sufficient statistic for a parameter $\theta$ and $h(X_1, ..., X_n)$ be any unbiased estimator of $\tau(\theta)$. 
+
+    Then the conditional expectation of $\phi(T) = E(h(X_1, ..., X_n)|T)$ (which does not depend on $\theta$ due to the sufficiency of $\theta$) is the best unbiased estimator of $\tau(\theta)$.
+\end{thm}
+
+\begin{note}
+    What is important is the completness of the family of distributions of the sufficient statistic. Completeness of the original family is of no consequence.
+\end{note}
+
+\begin{note}
+    If a complete sufficient statistic $T$ exists, all we need to do is find a function of $T$ that is unbiased. 
+
+    If a complete statistic does not exist, an UMVUE may still exist.
+\end{note}
 
 \end{document}
 

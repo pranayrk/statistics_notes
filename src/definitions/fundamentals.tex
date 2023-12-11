@@ -215,6 +215,15 @@ The $r$-th derivative of the moment generating funtion is the $r$-th moment abou
     $X$ and $Y$ are independent random variables if and only if $M(t_1, t_2) = M(t_1, 0) M(0, t_2)$ for all $t_1 \in [-h_1, h_1], t_2 \in [-h_2, h_2]$
 \end{thm}
 
+\begin{thm}[Bayes' Theorem]
+    Let $\{ A_1, A_2, ..., A_N \}$ be a partition of the sample space and assume that $P(A_i) > 0$ for all $i = 1,2, ..., N$.
+
+    For any event $B$ such that $P(B) > 0$ we have $P(A_i | B) = \frac{P(B|A_i)P(A_i)}{\sum_{k=1}^N P(A_k) P(B|A_k)}$ for each $i = 1, 2, ..., N$
+
+
+    Alternatively, $f_{X|Y}(x|y) = \frac{f_{Y|X}(y|x) f_X(x)}{f_Y(y)} = \frac{f_{Y|X} (y|x) f_X(x)}{\int_{-\infty}^{\infty} f_{Y|X} (y|t) f_X(t) dt }$
+\end{thm}
+
 
 \hhrule
 \subsection*{Distributions}
